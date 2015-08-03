@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C84558F81B6FF52900C839D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84558F71B6FF52900C839D9 /* AppDelegate.swift */; };
+		C84558FA1B6FF52900C839D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84558F91B6FF52900C839D9 /* ViewController.swift */; };
+		C84558FD1B6FF52900C839D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84558FB1B6FF52900C839D9 /* Main.storyboard */; };
+		C84558FF1B6FF52900C839D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84558FE1B6FF52900C839D9 /* Assets.xcassets */; };
+		C84559021B6FF52900C839D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559001B6FF52900C839D9 /* LaunchScreen.storyboard */; };
+		C845590D1B6FF52900C839D9 /* fussyspiderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C845590C1B6FF52900C839D9 /* fussyspiderTests.swift */; };
+		C84559181B6FF52900C839D9 /* fussyspiderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559171B6FF52900C839D9 /* fussyspiderUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C84559091B6FF52900C839D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C84558EC1B6FF52900C839D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C84558F31B6FF52900C839D9;
+			remoteInfo = fussyspider;
+		};
+		C84559141B6FF52900C839D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C84558EC1B6FF52900C839D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C84558F31B6FF52900C839D9;
+			remoteInfo = fussyspider;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C84558F41B6FF52900C839D9 /* fussyspider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fussyspider.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C84558F71B6FF52900C839D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C84558F91B6FF52900C839D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C84558FC1B6FF52900C839D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C84558FE1B6FF52900C839D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C84559011B6FF52900C839D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C84559031B6FF52900C839D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C84559081B6FF52900C839D9 /* fussyspiderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fussyspiderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C845590C1B6FF52900C839D9 /* fussyspiderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fussyspiderTests.swift; sourceTree = "<group>"; };
+		C845590E1B6FF52900C839D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C84559131B6FF52900C839D9 /* fussyspiderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fussyspiderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C84559171B6FF52900C839D9 /* fussyspiderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fussyspiderUITests.swift; sourceTree = "<group>"; };
+		C84559191B6FF52900C839D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C84558F11B6FF52900C839D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C84559051B6FF52900C839D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C84559101B6FF52900C839D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C84558EB1B6FF52900C839D9 = {
+			isa = PBXGroup;
+			children = (
+				C84558F61B6FF52900C839D9 /* fussyspider */,
+				C845590B1B6FF52900C839D9 /* fussyspiderTests */,
+				C84559161B6FF52900C839D9 /* fussyspiderUITests */,
+				C84558F51B6FF52900C839D9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C84558F51B6FF52900C839D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C84558F41B6FF52900C839D9 /* fussyspider.app */,
+				C84559081B6FF52900C839D9 /* fussyspiderTests.xctest */,
+				C84559131B6FF52900C839D9 /* fussyspiderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C84558F61B6FF52900C839D9 /* fussyspider */ = {
+			isa = PBXGroup;
+			children = (
+				C84558F71B6FF52900C839D9 /* AppDelegate.swift */,
+				C84558F91B6FF52900C839D9 /* ViewController.swift */,
+				C84558FB1B6FF52900C839D9 /* Main.storyboard */,
+				C84558FE1B6FF52900C839D9 /* Assets.xcassets */,
+				C84559001B6FF52900C839D9 /* LaunchScreen.storyboard */,
+				C84559031B6FF52900C839D9 /* Info.plist */,
+			);
+			path = fussyspider;
+			sourceTree = "<group>";
+		};
+		C845590B1B6FF52900C839D9 /* fussyspiderTests */ = {
+			isa = PBXGroup;
+			children = (
+				C845590C1B6FF52900C839D9 /* fussyspiderTests.swift */,
+				C845590E1B6FF52900C839D9 /* Info.plist */,
+			);
+			path = fussyspiderTests;
+			sourceTree = "<group>";
+		};
+		C84559161B6FF52900C839D9 /* fussyspiderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C84559171B6FF52900C839D9 /* fussyspiderUITests.swift */,
+				C84559191B6FF52900C839D9 /* Info.plist */,
+			);
+			path = fussyspiderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C84558F31B6FF52900C839D9 /* fussyspider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C845591C1B6FF52900C839D9 /* Build configuration list for PBXNativeTarget "fussyspider" */;
+			buildPhases = (
+				C84558F01B6FF52900C839D9 /* Sources */,
+				C84558F11B6FF52900C839D9 /* Frameworks */,
+				C84558F21B6FF52900C839D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fussyspider;
+			productName = fussyspider;
+			productReference = C84558F41B6FF52900C839D9 /* fussyspider.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C84559071B6FF52900C839D9 /* fussyspiderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C845591F1B6FF52900C839D9 /* Build configuration list for PBXNativeTarget "fussyspiderTests" */;
+			buildPhases = (
+				C84559041B6FF52900C839D9 /* Sources */,
+				C84559051B6FF52900C839D9 /* Frameworks */,
+				C84559061B6FF52900C839D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C845590A1B6FF52900C839D9 /* PBXTargetDependency */,
+			);
+			name = fussyspiderTests;
+			productName = fussyspiderTests;
+			productReference = C84559081B6FF52900C839D9 /* fussyspiderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C84559121B6FF52900C839D9 /* fussyspiderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C84559221B6FF52900C839D9 /* Build configuration list for PBXNativeTarget "fussyspiderUITests" */;
+			buildPhases = (
+				C845590F1B6FF52900C839D9 /* Sources */,
+				C84559101B6FF52900C839D9 /* Frameworks */,
+				C84559111B6FF52900C839D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C84559151B6FF52900C839D9 /* PBXTargetDependency */,
+			);
+			name = fussyspiderUITests;
+			productName = fussyspiderUITests;
+			productReference = C84559131B6FF52900C839D9 /* fussyspiderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C84558EC1B6FF52900C839D9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Egypt Urnash";
+				TargetAttributes = {
+					C84558F31B6FF52900C839D9 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					C84559071B6FF52900C839D9 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = C84558F31B6FF52900C839D9;
+					};
+					C84559121B6FF52900C839D9 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = C84558F31B6FF52900C839D9;
+					};
+				};
+			};
+			buildConfigurationList = C84558EF1B6FF52900C839D9 /* Build configuration list for PBXProject "fussyspider" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C84558EB1B6FF52900C839D9;
+			productRefGroup = C84558F51B6FF52900C839D9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C84558F31B6FF52900C839D9 /* fussyspider */,
+				C84559071B6FF52900C839D9 /* fussyspiderTests */,
+				C84559121B6FF52900C839D9 /* fussyspiderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C84558F21B6FF52900C839D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C84559021B6FF52900C839D9 /* LaunchScreen.storyboard in Resources */,
+				C84558FF1B6FF52900C839D9 /* Assets.xcassets in Resources */,
+				C84558FD1B6FF52900C839D9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C84559061B6FF52900C839D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C84559111B6FF52900C839D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C84558F01B6FF52900C839D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C84558FA1B6FF52900C839D9 /* ViewController.swift in Sources */,
+				C84558F81B6FF52900C839D9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C84559041B6FF52900C839D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C845590D1B6FF52900C839D9 /* fussyspiderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C845590F1B6FF52900C839D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C84559181B6FF52900C839D9 /* fussyspiderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C845590A1B6FF52900C839D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C84558F31B6FF52900C839D9 /* fussyspider */;
+			targetProxy = C84559091B6FF52900C839D9 /* PBXContainerItemProxy */;
+		};
+		C84559151B6FF52900C839D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C84558F31B6FF52900C839D9 /* fussyspider */;
+			targetProxy = C84559141B6FF52900C839D9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C84558FB1B6FF52900C839D9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C84558FC1B6FF52900C839D9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C84559001B6FF52900C839D9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C84559011B6FF52900C839D9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C845591A1B6FF52900C839D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C845591B1B6FF52900C839D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C845591D1B6FF52900C839D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = fussyspider/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.urnash.egypt.fussyspider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C845591E1B6FF52900C839D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = fussyspider/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.urnash.egypt.fussyspider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C84559201B6FF52900C839D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = fussyspiderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.urnash.egypt.fussyspiderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fussyspider.app/fussyspider";
+			};
+			name = Debug;
+		};
+		C84559211B6FF52900C839D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = fussyspiderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.urnash.egypt.fussyspiderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fussyspider.app/fussyspider";
+			};
+			name = Release;
+		};
+		C84559231B6FF52900C839D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = fussyspiderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.urnash.egypt.fussyspiderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = fussyspider;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C84559241B6FF52900C839D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = fussyspiderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.urnash.egypt.fussyspiderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = fussyspider;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C84558EF1B6FF52900C839D9 /* Build configuration list for PBXProject "fussyspider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C845591A1B6FF52900C839D9 /* Debug */,
+				C845591B1B6FF52900C839D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C845591C1B6FF52900C839D9 /* Build configuration list for PBXNativeTarget "fussyspider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C845591D1B6FF52900C839D9 /* Debug */,
+				C845591E1B6FF52900C839D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C845591F1B6FF52900C839D9 /* Build configuration list for PBXNativeTarget "fussyspiderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C84559201B6FF52900C839D9 /* Debug */,
+				C84559211B6FF52900C839D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C84559221B6FF52900C839D9 /* Build configuration list for PBXNativeTarget "fussyspiderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C84559231B6FF52900C839D9 /* Debug */,
+				C84559241B6FF52900C839D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C84558EC1B6FF52900C839D9 /* Project object */;
+}
