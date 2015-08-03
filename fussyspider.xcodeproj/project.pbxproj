@@ -9,11 +9,20 @@
 /* Begin PBXBuildFile section */
 		C84558F81B6FF52900C839D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84558F71B6FF52900C839D9 /* AppDelegate.swift */; };
 		C84558FA1B6FF52900C839D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84558F91B6FF52900C839D9 /* ViewController.swift */; };
-		C84558FD1B6FF52900C839D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84558FB1B6FF52900C839D9 /* Main.storyboard */; };
 		C84558FF1B6FF52900C839D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84558FE1B6FF52900C839D9 /* Assets.xcassets */; };
 		C84559021B6FF52900C839D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559001B6FF52900C839D9 /* LaunchScreen.storyboard */; };
 		C845590D1B6FF52900C839D9 /* fussyspiderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C845590C1B6FF52900C839D9 /* fussyspiderTests.swift */; };
 		C84559181B6FF52900C839D9 /* fussyspiderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559171B6FF52900C839D9 /* fussyspiderUITests.swift */; };
+		C845592C1B7008FC00C839D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559251B7008FC00C839D9 /* Main.storyboard */; };
+		C845592D1B7008FC00C839D9 /* TaskTagListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559261B7008FC00C839D9 /* TaskTagListTableViewController.swift */; };
+		C845592E1B7008FC00C839D9 /* TagEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559271B7008FC00C839D9 /* TagEditViewController.swift */; };
+		C845592F1B7008FC00C839D9 /* TagSelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559281B7008FC00C839D9 /* TagSelectTableViewController.swift */; };
+		C84559301B7008FC00C839D9 /* TaskEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559291B7008FC00C839D9 /* TaskEditViewController.swift */; };
+		C84559311B7008FC00C839D9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C845592A1B7008FC00C839D9 /* MainViewController.swift */; };
+		C84559321B7008FC00C839D9 /* PrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C845592B1B7008FC00C839D9 /* PrefsViewController.swift */; };
+		C84559341B700DFC00C839D9 /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559331B700DFC00C839D9 /* Task.storyboard */; };
+		C84559361B700EC600C839D9 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559351B700EC600C839D9 /* Preferences.storyboard */; };
+		C84559381B700F9100C839D9 /* Tags.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559371B700F9100C839D9 /* Tags.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +46,6 @@
 		C84558F41B6FF52900C839D9 /* fussyspider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fussyspider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84558F71B6FF52900C839D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C84558F91B6FF52900C839D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C84558FC1B6FF52900C839D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C84558FE1B6FF52900C839D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C84559011B6FF52900C839D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C84559031B6FF52900C839D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +55,16 @@
 		C84559131B6FF52900C839D9 /* fussyspiderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fussyspiderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84559171B6FF52900C839D9 /* fussyspiderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fussyspiderUITests.swift; sourceTree = "<group>"; };
 		C84559191B6FF52900C839D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C84559251B7008FC00C839D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C84559261B7008FC00C839D9 /* TaskTagListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTagListTableViewController.swift; sourceTree = "<group>"; };
+		C84559271B7008FC00C839D9 /* TagEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagEditViewController.swift; sourceTree = "<group>"; };
+		C84559281B7008FC00C839D9 /* TagSelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSelectTableViewController.swift; sourceTree = "<group>"; };
+		C84559291B7008FC00C839D9 /* TaskEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskEditViewController.swift; sourceTree = "<group>"; };
+		C845592A1B7008FC00C839D9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C845592B1B7008FC00C839D9 /* PrefsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrefsViewController.swift; sourceTree = "<group>"; };
+		C84559331B700DFC00C839D9 /* Task.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
+		C84559351B700EC600C839D9 /* Preferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
+		C84559371B700F9100C839D9 /* Tags.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tags.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +116,17 @@
 			isa = PBXGroup;
 			children = (
 				C84558F71B6FF52900C839D9 /* AppDelegate.swift */,
+				C84559251B7008FC00C839D9 /* Main.storyboard */,
+				C84559371B700F9100C839D9 /* Tags.storyboard */,
+				C84559351B700EC600C839D9 /* Preferences.storyboard */,
+				C84559331B700DFC00C839D9 /* Task.storyboard */,
+				C84559261B7008FC00C839D9 /* TaskTagListTableViewController.swift */,
+				C84559271B7008FC00C839D9 /* TagEditViewController.swift */,
+				C84559281B7008FC00C839D9 /* TagSelectTableViewController.swift */,
+				C84559291B7008FC00C839D9 /* TaskEditViewController.swift */,
+				C845592A1B7008FC00C839D9 /* MainViewController.swift */,
+				C845592B1B7008FC00C839D9 /* PrefsViewController.swift */,
 				C84558F91B6FF52900C839D9 /* ViewController.swift */,
-				C84558FB1B6FF52900C839D9 /* Main.storyboard */,
 				C84558FE1B6FF52900C839D9 /* Assets.xcassets */,
 				C84559001B6FF52900C839D9 /* LaunchScreen.storyboard */,
 				C84559031B6FF52900C839D9 /* Info.plist */,
@@ -192,6 +219,7 @@
 				TargetAttributes = {
 					C84558F31B6FF52900C839D9 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 6L9YDAZBYN;
 					};
 					C84559071B6FF52900C839D9 = {
 						CreatedOnToolsVersion = 7.0;
@@ -229,8 +257,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84559021B6FF52900C839D9 /* LaunchScreen.storyboard in Resources */,
+				C84559381B700F9100C839D9 /* Tags.storyboard in Resources */,
+				C84559341B700DFC00C839D9 /* Task.storyboard in Resources */,
 				C84558FF1B6FF52900C839D9 /* Assets.xcassets in Resources */,
-				C84558FD1B6FF52900C839D9 /* Main.storyboard in Resources */,
+				C84559361B700EC600C839D9 /* Preferences.storyboard in Resources */,
+				C845592C1B7008FC00C839D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +286,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C84559311B7008FC00C839D9 /* MainViewController.swift in Sources */,
+				C845592F1B7008FC00C839D9 /* TagSelectTableViewController.swift in Sources */,
 				C84558FA1B6FF52900C839D9 /* ViewController.swift in Sources */,
+				C84559321B7008FC00C839D9 /* PrefsViewController.swift in Sources */,
 				C84558F81B6FF52900C839D9 /* AppDelegate.swift in Sources */,
+				C84559301B7008FC00C839D9 /* TaskEditViewController.swift in Sources */,
+				C845592D1B7008FC00C839D9 /* TaskTagListTableViewController.swift in Sources */,
+				C845592E1B7008FC00C839D9 /* TagEditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,14 +329,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C84558FB1B6FF52900C839D9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C84558FC1B6FF52900C839D9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C84559001B6FF52900C839D9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -398,10 +427,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = fussyspider/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.urnash.egypt.fussyspider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -409,10 +442,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = fussyspider/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.urnash.egypt.fussyspider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
