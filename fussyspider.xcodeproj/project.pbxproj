@@ -22,6 +22,7 @@
 		C84559321B7008FC00C839D9 /* PrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C845592B1B7008FC00C839D9 /* PrefsViewController.swift */; };
 		C84559341B700DFC00C839D9 /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559331B700DFC00C839D9 /* Task.storyboard */; };
 		C84559361B700EC600C839D9 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559351B700EC600C839D9 /* Preferences.storyboard */; };
+		C879447A1B709BCD0004A89B /* Tags.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C87944791B709BCD0004A89B /* Tags.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		C845592B1B7008FC00C839D9 /* PrefsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrefsViewController.swift; sourceTree = "<group>"; };
 		C84559331B700DFC00C839D9 /* Task.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		C84559351B700EC600C839D9 /* Preferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
+		C87944791B709BCD0004A89B /* Tags.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tags.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				C84559251B7008FC00C839D9 /* Main.storyboard */,
 				C84559351B700EC600C839D9 /* Preferences.storyboard */,
 				C84559331B700DFC00C839D9 /* Task.storyboard */,
+				C87944791B709BCD0004A89B /* Tags.storyboard */,
 				C84559261B7008FC00C839D9 /* TaskTagListTableViewController.swift */,
 				C84559271B7008FC00C839D9 /* TagEditViewController.swift */,
 				C84559281B7008FC00C839D9 /* TagSelectTableViewController.swift */,
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84559021B6FF52900C839D9 /* LaunchScreen.storyboard in Resources */,
+				C879447A1B709BCD0004A89B /* Tags.storyboard in Resources */,
 				C84559341B700DFC00C839D9 /* Task.storyboard in Resources */,
 				C84558FF1B6FF52900C839D9 /* Assets.xcassets in Resources */,
 				C84559361B700EC600C839D9 /* Preferences.storyboard in Resources */,
@@ -516,6 +520,7 @@
 				C845591E1B6FF52900C839D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C845591F1B6FF52900C839D9 /* Build configuration list for PBXNativeTarget "fussyspiderTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +529,7 @@
 				C84559211B6FF52900C839D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C84559221B6FF52900C839D9 /* Build configuration list for PBXNativeTarget "fussyspiderUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +538,7 @@
 				C84559241B6FF52900C839D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
