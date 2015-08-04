@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import EventKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var eventStore: EKEventStore?
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -40,7 +41,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    func initEventStore() {
+        if eventStore == nil {
+            eventStore = EKEventStore()
+        }
+    }
+    
+    func requestEventAccess(entityType: EKEntityType = EKEntityType.Reminder) {
+        if eventStore == nil {
+            initEventStore()
+        }
+        eventStore!.requestAccessToEntityType(entityType, completion:
+            {(granted, error) in
+                // Proper error handling eventually
+                if !granted {
+                    print("Access to Event Store not granted\n")
+                    print(error)
+                }
+        })
+    }
 }
 

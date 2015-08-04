@@ -30,6 +30,7 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="O9I-RZ-Jqx">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="sectionIndexBackgroundColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="test" id="5FE-Zx-Qcl">
                                                 <rect key="frame" x="0.0" y="22" width="600" height="44"/>
@@ -138,22 +139,22 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem title="tag filter" id="XPR-oc-Ugi">
-                                        <color key="tintColor" red="0.74199021467373738" green="0.0032959195244343024" blue="0.70069688653324913" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="Zvo-kV-kup" kind="show" id="ZbU-FO-r3J"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="add" id="b3m-rU-NRg">
-                                        <color key="tintColor" red="0.74199021467373738" green="0.0032959195244343024" blue="0.70069688653324913" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="Gvv-oA-S0r" kind="show" id="zaB-2C-Qby"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="sy8-w1-gqo">
-                                        <color key="tintColor" red="0.74199021467373738" green="0.0032959195244343024" blue="0.70069688653324913" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem title="birb!" id="q2d-l9-Y41">
-                                        <color key="tintColor" red="0.74199021467373738" green="0.0032959195244343024" blue="0.70069688653324913" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                 </items>
                             </toolbar>

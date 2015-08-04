@@ -9,11 +9,16 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    var appDelegate: AppDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        initAppDelegate()
+        appDelegate!.initEventStore()
+        appDelegate!.requestEventAccess()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +36,11 @@ class MainViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func initAppDelegate() {
+        if appDelegate == nil {
+            appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        }
+    }
 
 }

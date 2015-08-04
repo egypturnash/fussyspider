@@ -22,7 +22,6 @@
 		C84559321B7008FC00C839D9 /* PrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C845592B1B7008FC00C839D9 /* PrefsViewController.swift */; };
 		C84559341B700DFC00C839D9 /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559331B700DFC00C839D9 /* Task.storyboard */; };
 		C84559361B700EC600C839D9 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559351B700EC600C839D9 /* Preferences.storyboard */; };
-		C84559381B700F9100C839D9 /* Tags.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559371B700F9100C839D9 /* Tags.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +63,6 @@
 		C845592B1B7008FC00C839D9 /* PrefsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrefsViewController.swift; sourceTree = "<group>"; };
 		C84559331B700DFC00C839D9 /* Task.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		C84559351B700EC600C839D9 /* Preferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
-		C84559371B700F9100C839D9 /* Tags.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tags.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +115,6 @@
 			children = (
 				C84558F71B6FF52900C839D9 /* AppDelegate.swift */,
 				C84559251B7008FC00C839D9 /* Main.storyboard */,
-				C84559371B700F9100C839D9 /* Tags.storyboard */,
 				C84559351B700EC600C839D9 /* Preferences.storyboard */,
 				C84559331B700DFC00C839D9 /* Task.storyboard */,
 				C84559261B7008FC00C839D9 /* TaskTagListTableViewController.swift */,
@@ -257,7 +254,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84559021B6FF52900C839D9 /* LaunchScreen.storyboard in Resources */,
-				C84559381B700F9100C839D9 /* Tags.storyboard in Resources */,
 				C84559341B700DFC00C839D9 /* Task.storyboard in Resources */,
 				C84558FF1B6FF52900C839D9 /* Assets.xcassets in Resources */,
 				C84559361B700EC600C839D9 /* Preferences.storyboard in Resources */,
