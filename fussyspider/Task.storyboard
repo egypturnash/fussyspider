@@ -17,10 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1wH-Fl-mfe">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1wH-Fl-mfe">
                                 <rect key="frame" x="135" y="72" width="449" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label="Task Name Field"/>
-                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -134,15 +133,21 @@
                                 <segue destination="ig4-eX-xGm" kind="show" id="Mm1-WC-jnf"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HQP-Ig-UaL">
+                        <barButtonItem key="rightBarButtonItem" tag="1" systemItem="save" id="HQP-Ig-UaL">
                             <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                             <connections>
+                                <action selector="saveReminder:" destination="jJE-JF-2d3" id="gav-3Y-VoK"/>
                                 <segue destination="ig4-eX-xGm" kind="show" id="Qhy-44-iEE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="reminderDate" destination="iaP-9j-cke" id="vcp-B7-cvW"/>
+                        <outlet property="reminderName" destination="1wH-Fl-mfe" id="eZh-nw-fHl"/>
+                        <outlet property="reminderNotes" destination="edx-JS-fXd" id="GTZ-fY-lix"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFm-Ea-Kz7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

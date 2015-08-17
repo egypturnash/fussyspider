@@ -7,18 +7,39 @@
 //
 
 import UIKit
+import EventKit
 
-class MainViewController: UIViewController {
+
+// Error started after deleting IBOutlet to table
+// Need to research how to manage a table in a View Controller
+// Possibly just embedded a TableViewController in a Navigation Controller, but what about bottom buttons?
+// Maybe just simplify the interface by having a dedicated controller for just the table, separate of the MainViewController
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    @IBOutlet weak var taskTable: UITableView!
     
-    var appDelegate: AppDelegate?
-
+    var reminders: [EKReminder] = []
+    
+    func tableView(tableView: UITableView,
+        numberOfRowsInSection section: Int) -> Int {
+            return reminders.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("taskRow", forIndexPath: indexPath)
+        let row = indexPath.row
+        
+        cell.textLabel!.text = reminders[row].title
+        
+        return cell
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        initAppDelegate()
-        appDelegate!.initEventStore()
-        appDelegate!.requestEventAccess()
+        self.taskTable.delegate = self
+        self.taskTable.dataSource = self
+        let delegate = UIApplication.sharedApplication().delegate as? AppDelegate    
+        reminders = (delegate?.reminders)!
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,11 +57,4 @@ class MainViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    func initAppDelegate() {
-        if appDelegate == nil {
-            appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-        }
-    }
-
 }
