@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -9,7 +9,7 @@
         <scene sceneID="ZbE-vK-xsN">
             <objects>
                 <tableViewController id="zuZ-hQ-X2d" customClass="TagSelectTableViewController" customModule="fussyspider" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MGV-ay-wNm">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MGV-ay-wNm" userLabel="tag list">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,46 +83,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zO9-ms-D7F">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zO9-ms-D7F">
                                 <rect key="frame" x="16" y="75" width="48" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="mbF-pO-mgL"/>
+                                    <constraint firstAttribute="width" constant="48" id="WSs-oF-kGs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Iz4-yB-pY3">
-                                <rect key="frame" x="16" y="153" width="568" height="300"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ua2-GO-nG2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ua2-GO-nG2" userLabel="Tag Name Field">
                                 <rect key="frame" x="72" y="72" width="512" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="Tag Name Field"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Locations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zA-vn-1Ro">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zA-vn-1Ro">
                                 <rect key="frame" x="16" y="119" width="77" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="77" id="QiZ-sG-oXI"/>
-                                    <constraint firstAttribute="height" constant="26" id="wEt-52-wg6"/>
+                                    <constraint firstAttribute="width" constant="77" id="2NT-Jj-rB5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AL6-Hl-sgE">
+                                <rect key="frame" x="101" y="121" width="483" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="Location Field"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8H0-Ra-Hqu">
+                                <rect key="frame" x="16" y="159" width="568" height="30"/>
+                                <state key="normal" title="Update Location">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="4zA-vn-1Ro" firstAttribute="top" secondItem="ua2-GO-nG2" secondAttribute="bottom" constant="17" id="0oz-Hg-0l4"/>
-                            <constraint firstItem="Iz4-yB-pY3" firstAttribute="leading" secondItem="4zA-vn-1Ro" secondAttribute="leading" id="2sy-HF-nIs"/>
-                            <constraint firstItem="Iz4-yB-pY3" firstAttribute="top" secondItem="4zA-vn-1Ro" secondAttribute="bottom" constant="8" symbolic="YES" id="BX3-N0-xAS"/>
-                            <constraint firstItem="ua2-GO-nG2" firstAttribute="top" secondItem="ebi-Jp-GcA" secondAttribute="bottom" constant="8" symbolic="YES" id="MkR-83-hjM"/>
-                            <constraint firstItem="ua2-GO-nG2" firstAttribute="leading" secondItem="zO9-ms-D7F" secondAttribute="trailing" constant="8" symbolic="YES" id="Qcm-bI-ncM"/>
-                            <constraint firstItem="Iz4-yB-pY3" firstAttribute="trailing" secondItem="0Ee-ax-qfb" secondAttribute="trailingMargin" id="TZb-IV-Jg5"/>
-                            <constraint firstItem="Iz4-yB-pY3" firstAttribute="trailing" secondItem="ua2-GO-nG2" secondAttribute="trailing" id="TfX-XD-RPd"/>
-                            <constraint firstItem="4zA-vn-1Ro" firstAttribute="leading" secondItem="0Ee-ax-qfb" secondAttribute="leadingMargin" id="YKv-Mr-tp3"/>
-                            <constraint firstItem="zO9-ms-D7F" firstAttribute="baseline" secondItem="ua2-GO-nG2" secondAttribute="baseline" id="i4a-7O-Ry7"/>
-                            <constraint firstItem="T73-uj-iZv" firstAttribute="top" secondItem="Iz4-yB-pY3" secondAttribute="bottom" constant="147" id="lc3-SY-ESa"/>
-                            <constraint firstItem="4zA-vn-1Ro" firstAttribute="leading" secondItem="zO9-ms-D7F" secondAttribute="leading" id="u5m-Jk-DNJ"/>
+                            <constraint firstItem="zO9-ms-D7F" firstAttribute="baseline" secondItem="ua2-GO-nG2" secondAttribute="baseline" id="4Wb-lM-Emj"/>
+                            <constraint firstItem="4zA-vn-1Ro" firstAttribute="leading" secondItem="8H0-Ra-Hqu" secondAttribute="leading" id="IgP-0z-cGM"/>
+                            <constraint firstItem="8H0-Ra-Hqu" firstAttribute="centerX" secondItem="0Ee-ax-qfb" secondAttribute="centerX" id="SW2-lY-tTu"/>
+                            <constraint firstItem="AL6-Hl-sgE" firstAttribute="top" secondItem="ua2-GO-nG2" secondAttribute="bottom" constant="19" id="Tid-Lf-rnf"/>
+                            <constraint firstItem="AL6-Hl-sgE" firstAttribute="trailing" secondItem="ua2-GO-nG2" secondAttribute="trailing" id="Wqy-xb-3eK"/>
+                            <constraint firstItem="ua2-GO-nG2" firstAttribute="top" secondItem="ebi-Jp-GcA" secondAttribute="bottom" constant="8" symbolic="YES" id="Xc7-Dg-7GT"/>
+                            <constraint firstItem="4zA-vn-1Ro" firstAttribute="top" secondItem="ua2-GO-nG2" secondAttribute="bottom" constant="17" id="ZXg-xL-1TV"/>
+                            <constraint firstItem="8H0-Ra-Hqu" firstAttribute="trailing" secondItem="AL6-Hl-sgE" secondAttribute="trailing" id="Ztl-WB-Ver"/>
+                            <constraint firstItem="AL6-Hl-sgE" firstAttribute="leading" secondItem="4zA-vn-1Ro" secondAttribute="trailing" constant="8" symbolic="YES" id="deX-UZ-Gb5"/>
+                            <constraint firstItem="4zA-vn-1Ro" firstAttribute="baseline" secondItem="AL6-Hl-sgE" secondAttribute="baseline" id="kQn-hW-Fw2"/>
+                            <constraint firstItem="4zA-vn-1Ro" firstAttribute="leading" secondItem="zO9-ms-D7F" secondAttribute="leading" id="kVx-NQ-VwA"/>
+                            <constraint firstItem="8H0-Ra-Hqu" firstAttribute="top" secondItem="AL6-Hl-sgE" secondAttribute="bottom" constant="8" symbolic="YES" id="qZZ-jC-UMo"/>
+                            <constraint firstItem="zO9-ms-D7F" firstAttribute="leading" secondItem="0Ee-ax-qfb" secondAttribute="leadingMargin" constant="-4" id="tiL-PJ-g3s"/>
+                            <constraint firstItem="ua2-GO-nG2" firstAttribute="leading" secondItem="zO9-ms-D7F" secondAttribute="trailing" constant="8" symbolic="YES" id="wh2-mi-njz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Tag" id="5ZF-Er-afi">

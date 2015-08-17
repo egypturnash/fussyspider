@@ -1,14 +1,16 @@
 //
-//  fussyspiderUITests.swift
-//  fussyspiderUITests
+//  fussyspiderKalindaUITests.swift
+//  fussyspider
 //
-//  Created by Evan Ostroski on 8/3/15.
+//  Created by Evan Ostroski on 8/16/15.
 //  Copyright © 2015 Egypt Urnash. All rights reserved.
 //
 
 import XCTest
 
-class fussyspiderUITests: XCTestCase {
+class fussyspiderKalindaUITests: XCTestCase {
+    
+    let app = XCUIApplication()
         
     override func setUp() {
         super.setUp()
@@ -19,6 +21,7 @@ class fussyspiderUITests: XCTestCase {
         continueAfterFailure = false
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
+        app.toolbars.buttons["birb!"].tap()
     }
     
     override func tearDown() {
@@ -26,9 +29,17 @@ class fussyspiderUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testDoneButton() {
+        XCTAssertTrue(app.navigationBars["Kalinda"].buttons["Done"].exists)
+        app.navigationBars["Kalinda"].buttons["Done"].tap()
+        XCTAssertTrue(app.navigationBars["fussyspider"].exists)
     }
     
+    func testSwipeLeft() {
+        //TODO
+    }
+    
+    func testSwipeRight() {
+        //TODO
+    }
 }

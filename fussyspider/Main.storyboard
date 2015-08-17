@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bV5-sg-pNj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bV5-sg-pNj">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
     </dependencies>
     <scenes>
+        <!--Kalinda-->
+        <scene sceneID="PqD-vD-6SC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Kalinda" id="fq8-0q-AJY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J1M-2c-Ma7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73" y="803"/>
+        </scene>
         <!--Preferences-->
         <scene sceneID="P2E-y9-0GC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4vU-hj-paA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Preferences" id="f3y-0G-2y0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4vU-hj-paA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-587" y="9"/>
+            <point key="canvasLocation" x="-437.5" y="803"/>
         </scene>
         <!--Main-->
         <scene sceneID="g4D-ve-5IY">
@@ -135,17 +143,17 @@
                                     <constraint firstAttribute="bottom" secondItem="O9I-RZ-Jqx" secondAttribute="bottom" id="vOu-qc-WLs"/>
                                 </constraints>
                             </scrollView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDx-P1-rP6">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDx-P1-rP6">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem title="tag filter" id="XPR-oc-Ugi">
-                                        <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <connections>
                                             <segue destination="Zvo-kV-kup" kind="show" id="ZbU-FO-r3J"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="add" id="b3m-rU-NRg">
-                                        <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <connections>
                                             <segue destination="Gvv-oA-S0r" kind="show" id="zaB-2C-Qby"/>
                                         </connections>
@@ -154,12 +162,15 @@
                                         <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem title="birb!" id="q2d-l9-Y41">
-                                        <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <connections>
+                                            <segue destination="fq8-0q-AJY" kind="show" id="ZtB-0a-C2V"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="barTintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" red="0.42485400880000002" green="0.01552005251" blue="0.35441673750000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Vsy-ed-V5h" firstAttribute="leading" secondItem="lMA-ZS-R4Z" secondAttribute="leading" id="3c9-8n-bWF"/>
                             <constraint firstItem="Vsy-ed-V5h" firstAttribute="top" secondItem="lMA-ZS-R4Z" secondAttribute="top" id="RB9-zq-tr6"/>
@@ -192,16 +203,16 @@
         <!--tagSelect-->
         <scene sceneID="Oig-rS-2w0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PM3-eb-PlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Tags" referencedIdentifier="tagSelect" id="Zvo-kV-kup" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PM3-eb-PlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-553" y="803"/>
+            <point key="canvasLocation" x="-55" y="803"/>
         </scene>
         <!--tagEdit-->
         <scene sceneID="qeR-At-V3Y">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qNA-yr-JUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Tags" referencedIdentifier="tagEdit" id="Gvv-oA-S0r" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qNA-yr-JUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-189" y="803"/>
         </scene>
@@ -229,7 +240,7 @@
                 <viewControllerPlaceholder storyboardName="Task" id="hwT-qE-ZYn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRi-at-J9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="274" y="9"/>
+            <point key="canvasLocation" x="-303.5" y="803"/>
         </scene>
     </scenes>
 </document>

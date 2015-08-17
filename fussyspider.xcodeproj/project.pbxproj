@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C8358B2A1B81759F00DE5F2F /* fussyspiderTagEditUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8358B291B81759F00DE5F2F /* fussyspiderTagEditUITests.swift */; };
 		C84558F81B6FF52900C839D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84558F71B6FF52900C839D9 /* AppDelegate.swift */; };
-		C84558FA1B6FF52900C839D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84558F91B6FF52900C839D9 /* ViewController.swift */; };
 		C84558FF1B6FF52900C839D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84558FE1B6FF52900C839D9 /* Assets.xcassets */; };
-		C84559021B6FF52900C839D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559001B6FF52900C839D9 /* LaunchScreen.storyboard */; };
 		C845590D1B6FF52900C839D9 /* fussyspiderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C845590C1B6FF52900C839D9 /* fussyspiderTests.swift */; };
-		C84559181B6FF52900C839D9 /* fussyspiderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559171B6FF52900C839D9 /* fussyspiderUITests.swift */; };
+		C84559181B6FF52900C839D9 /* fussyspiderMainViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559171B6FF52900C839D9 /* fussyspiderMainViewUITests.swift */; };
 		C845592C1B7008FC00C839D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559251B7008FC00C839D9 /* Main.storyboard */; };
 		C845592D1B7008FC00C839D9 /* TaskTagListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559261B7008FC00C839D9 /* TaskTagListTableViewController.swift */; };
 		C845592E1B7008FC00C839D9 /* TagEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559271B7008FC00C839D9 /* TagEditViewController.swift */; };
@@ -23,6 +22,11 @@
 		C84559341B700DFC00C839D9 /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559331B700DFC00C839D9 /* Task.storyboard */; };
 		C84559361B700EC600C839D9 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559351B700EC600C839D9 /* Preferences.storyboard */; };
 		C879447A1B709BCD0004A89B /* Tags.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C87944791B709BCD0004A89B /* Tags.storyboard */; };
+		C8E8A09A1B814D32006CBB65 /* Kalinda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E8A0991B814D32006CBB65 /* Kalinda.storyboard */; };
+		C8E8A09E1B8154E3006CBB65 /* fussyspiderPreferencesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E8A09D1B8154E3006CBB65 /* fussyspiderPreferencesUITests.swift */; };
+		C8E8A0A01B81551A006CBB65 /* fussyspiderTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E8A09F1B81551A006CBB65 /* fussyspiderTaskUITests.swift */; };
+		C8E8A0A21B81553C006CBB65 /* fussyspiderTagSelectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E8A0A11B81553C006CBB65 /* fussyspiderTagSelectUITests.swift */; };
+		C8E8A0A41B815583006CBB65 /* fussyspiderKalindaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E8A0A31B815583006CBB65 /* fussyspiderKalindaUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,17 +47,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C8358B291B81759F00DE5F2F /* fussyspiderTagEditUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fussyspiderTagEditUITests.swift; sourceTree = "<group>"; };
 		C84558F41B6FF52900C839D9 /* fussyspider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fussyspider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84558F71B6FF52900C839D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C84558F91B6FF52900C839D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C84558FE1B6FF52900C839D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C84559011B6FF52900C839D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C84559031B6FF52900C839D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C84559081B6FF52900C839D9 /* fussyspiderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fussyspiderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C845590C1B6FF52900C839D9 /* fussyspiderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fussyspiderTests.swift; sourceTree = "<group>"; };
 		C845590E1B6FF52900C839D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C84559131B6FF52900C839D9 /* fussyspiderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fussyspiderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C84559171B6FF52900C839D9 /* fussyspiderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fussyspiderUITests.swift; sourceTree = "<group>"; };
+		C84559171B6FF52900C839D9 /* fussyspiderMainViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fussyspiderMainViewUITests.swift; sourceTree = "<group>"; };
 		C84559191B6FF52900C839D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C84559251B7008FC00C839D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C84559261B7008FC00C839D9 /* TaskTagListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTagListTableViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +68,11 @@
 		C84559331B700DFC00C839D9 /* Task.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		C84559351B700EC600C839D9 /* Preferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		C87944791B709BCD0004A89B /* Tags.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tags.storyboard; sourceTree = "<group>"; };
+		C8E8A0991B814D32006CBB65 /* Kalinda.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Kalinda.storyboard; sourceTree = "<group>"; };
+		C8E8A09D1B8154E3006CBB65 /* fussyspiderPreferencesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fussyspiderPreferencesUITests.swift; sourceTree = "<group>"; };
+		C8E8A09F1B81551A006CBB65 /* fussyspiderTaskUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fussyspiderTaskUITests.swift; sourceTree = "<group>"; };
+		C8E8A0A11B81553C006CBB65 /* fussyspiderTagSelectUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fussyspiderTagSelectUITests.swift; sourceTree = "<group>"; };
+		C8E8A0A31B815583006CBB65 /* fussyspiderKalindaUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fussyspiderKalindaUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,7 @@
 			children = (
 				C84558F71B6FF52900C839D9 /* AppDelegate.swift */,
 				C84559251B7008FC00C839D9 /* Main.storyboard */,
+				C8E8A0991B814D32006CBB65 /* Kalinda.storyboard */,
 				C84559351B700EC600C839D9 /* Preferences.storyboard */,
 				C84559331B700DFC00C839D9 /* Task.storyboard */,
 				C87944791B709BCD0004A89B /* Tags.storyboard */,
@@ -126,9 +135,7 @@
 				C84559291B7008FC00C839D9 /* TaskEditViewController.swift */,
 				C845592A1B7008FC00C839D9 /* MainViewController.swift */,
 				C845592B1B7008FC00C839D9 /* PrefsViewController.swift */,
-				C84558F91B6FF52900C839D9 /* ViewController.swift */,
 				C84558FE1B6FF52900C839D9 /* Assets.xcassets */,
-				C84559001B6FF52900C839D9 /* LaunchScreen.storyboard */,
 				C84559031B6FF52900C839D9 /* Info.plist */,
 			);
 			path = fussyspider;
@@ -146,8 +153,13 @@
 		C84559161B6FF52900C839D9 /* fussyspiderUITests */ = {
 			isa = PBXGroup;
 			children = (
-				C84559171B6FF52900C839D9 /* fussyspiderUITests.swift */,
+				C84559171B6FF52900C839D9 /* fussyspiderMainViewUITests.swift */,
 				C84559191B6FF52900C839D9 /* Info.plist */,
+				C8E8A09D1B8154E3006CBB65 /* fussyspiderPreferencesUITests.swift */,
+				C8E8A09F1B81551A006CBB65 /* fussyspiderTaskUITests.swift */,
+				C8E8A0A11B81553C006CBB65 /* fussyspiderTagSelectUITests.swift */,
+				C8E8A0A31B815583006CBB65 /* fussyspiderKalindaUITests.swift */,
+				C8358B291B81759F00DE5F2F /* fussyspiderTagEditUITests.swift */,
 			);
 			path = fussyspiderUITests;
 			sourceTree = "<group>";
@@ -256,11 +268,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C84559021B6FF52900C839D9 /* LaunchScreen.storyboard in Resources */,
 				C879447A1B709BCD0004A89B /* Tags.storyboard in Resources */,
 				C84559341B700DFC00C839D9 /* Task.storyboard in Resources */,
 				C84558FF1B6FF52900C839D9 /* Assets.xcassets in Resources */,
 				C84559361B700EC600C839D9 /* Preferences.storyboard in Resources */,
+				C8E8A09A1B814D32006CBB65 /* Kalinda.storyboard in Resources */,
 				C845592C1B7008FC00C839D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,7 +300,6 @@
 			files = (
 				C84559311B7008FC00C839D9 /* MainViewController.swift in Sources */,
 				C845592F1B7008FC00C839D9 /* TagSelectTableViewController.swift in Sources */,
-				C84558FA1B6FF52900C839D9 /* ViewController.swift in Sources */,
 				C84559321B7008FC00C839D9 /* PrefsViewController.swift in Sources */,
 				C84558F81B6FF52900C839D9 /* AppDelegate.swift in Sources */,
 				C84559301B7008FC00C839D9 /* TaskEditViewController.swift in Sources */,
@@ -309,7 +320,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C84559181B6FF52900C839D9 /* fussyspiderUITests.swift in Sources */,
+				C8358B2A1B81759F00DE5F2F /* fussyspiderTagEditUITests.swift in Sources */,
+				C8E8A0A21B81553C006CBB65 /* fussyspiderTagSelectUITests.swift in Sources */,
+				C8E8A09E1B8154E3006CBB65 /* fussyspiderPreferencesUITests.swift in Sources */,
+				C8E8A0A01B81551A006CBB65 /* fussyspiderTaskUITests.swift in Sources */,
+				C84559181B6FF52900C839D9 /* fussyspiderMainViewUITests.swift in Sources */,
+				C8E8A0A41B815583006CBB65 /* fussyspiderKalindaUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,17 +343,6 @@
 			targetProxy = C84559141B6FF52900C839D9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C84559001B6FF52900C839D9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C84559011B6FF52900C839D9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C845591A1B6FF52900C839D9 /* Debug */ = {
