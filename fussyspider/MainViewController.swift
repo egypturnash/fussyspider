@@ -18,28 +18,33 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     @IBOutlet weak var taskTable: UITableView!
     
-    var reminders: [EKReminder] = []
+    var taskTableArray: [String] = []
     
     func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
-            return reminders.count
+            return taskTableArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("taskRow", forIndexPath: indexPath)
         let row = indexPath.row
         
-        cell.textLabel!.text = reminders[row].title
+        cell.textLabel!.text = taskTableArray[row]
         
         return cell
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // The UITableView needs to know where to send events and get data
         self.taskTable.delegate = self
         self.taskTable.dataSource = self
+        
+        // Get the current list of reminders to display
         let delegate = UIApplication.sharedApplication().delegate as? AppDelegate    
-        reminders = (delegate?.reminders)!
+        taskTableArray = (delegate?.getTaskTable())!
     }
 
     override func didReceiveMemoryWarning() {

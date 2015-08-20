@@ -64,7 +64,8 @@ class fussyspiderMainViewUITests: XCTestCase {
         XCTAssertTrue(app.navigationBars["Kalinda"].exists)
     }
     
-    func testMainTableView() {        
-        XCTAssertTrue(app.tables["Empty list"].exists)
+    func testMainTableView() {
+        let table = app.scrollViews.childrenMatchingType(.Table).element
+        XCTAssertTrue(table.exists)
     }
 }

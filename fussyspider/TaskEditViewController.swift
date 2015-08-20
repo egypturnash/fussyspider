@@ -44,6 +44,7 @@ class TaskEditViewController: UIViewController {
             reminder.addAlarm(alarm)
             
             delegate!.saveReminder(reminder)
+            delegate!.fetchReminders()
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

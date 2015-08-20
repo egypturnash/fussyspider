@@ -14,7 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var eventStore: EKEventStore?
-    var reminders: [EKReminder] = []
+    var reminders: [FSReminder] = []
+    var tagFilter: [String] = ["#test"] // DEBUG
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -80,13 +81,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if eventStore == nil {
             requestEventAccess()
         }
-        let predicate = eventStore!.predicateForRemindersInCalendars(eventStore!.calendarsForEntityType(EKEntityType.Reminder))
+        self.reminders = []
+        let calendars = eventStore!.calendarsForEntityType(EKEntityType.Reminder)
+        let predicate = eventStore!.predicateForRemindersInCalendars(calendars)
         eventStore!.fetchRemindersMatchingPredicate(predicate, completion:
             { (_reminders) in
                 for reminder in _reminders! {
-                    self.reminders.append(reminder)
+                    let fussyReminder = FSReminder(reminder: reminder, tags: self.extractTags(reminder.title))
+                    self.reminders.append(fussyReminder)
                 }
         })
+    }
+    
+    func extractTags(input: String) -> [String] {
+        var result : [String] = []
+        let slices = input.componentsSeparatedByString(" ")
+        for slice in slices {
+            if slice.substringToIndex(advance(slice.startIndex, 1)) == "#" {
+                result.append(slice)
+            }
+        }
+        return result
+    }
+    
+    // Based on current tag filter, what tasks get displayed
+    func getTaskTable() -> [String] {
+        var result : [String] = []
+        for reminder in self.reminders {
+            for tag in reminder.tags {
+                if tagFilter.contains(tag) {
+                    result.append(reminder.reminder.title)
+                    break
+                }
+            }
+        }
+        return result
     }
 }
 
