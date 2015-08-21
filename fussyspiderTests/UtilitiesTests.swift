@@ -28,11 +28,12 @@ class UtilitiesTests: XCTestCase {
         let testResult = ["#this", "#two"]
         XCTAssertEqual(extractTags(testInput), testResult)
     }
-    /*
+
     func testFetchReminders() {
         let testTags = ["#test", "#two"]
-        fetchReminders(testTags)
-        XCTAssertTrue(testDelegate?.fussyReminders.count > 0)
+        fetchReminders(testTags, completion: {
+            XCTAssertTrue(self.testDelegate?.fussyReminders.count > 0)
+        })        
     }
-    */
+
 }

@@ -21,16 +21,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var delegate : AppDelegate?
     var eventStore : EKEventStore?
     
-    var reminders: [FussyReminder] = []
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         delegate = delegate ?? UIApplication.sharedApplication().delegate as? AppDelegate
         eventStore = eventStore ?? delegate!.eventStore
         
-        fetchReminders(["#test", "#two"])
+        fetchReminders(["#test", "#two"], completion: {
+            self.taskTable.reloadData()
+        })
         
         // The UITableView needs to know where to send events and get data
         self.taskTable.delegate = self

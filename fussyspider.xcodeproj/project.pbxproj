@@ -140,6 +140,7 @@
 				C84558F71B6FF52900C839D9 /* AppDelegate.swift */,
 				C8DC47F71B85793500C51D35 /* FussyReminder.swift */,
 				C8DC48041B86B17B00C51D35 /* FussyTag.swift */,
+				C8DC48021B86AE0F00C51D35 /* Utilities.swift */,
 				C84559251B7008FC00C839D9 /* Main.storyboard */,
 				C8E8A0991B814D32006CBB65 /* Kalinda.storyboard */,
 				C84559351B700EC600C839D9 /* Preferences.storyboard */,
@@ -153,7 +154,6 @@
 				C845592B1B7008FC00C839D9 /* PrefsViewController.swift */,
 				C84558FE1B6FF52900C839D9 /* Assets.xcassets */,
 				C84559031B6FF52900C839D9 /* Info.plist */,
-				C8DC48021B86AE0F00C51D35 /* Utilities.swift */,
 			);
 			path = fussyspider;
 			sourceTree = "<group>";

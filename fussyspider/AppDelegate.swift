@@ -16,11 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
     var eventStore: EKEventStore?
     var fussyReminders: [FussyReminder] = []
-    var tagFilter: [String] = ["#test"] // DEBUG
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         requestEventAccess()
-        fetchReminders(tagFilter)
         return true
     }
 

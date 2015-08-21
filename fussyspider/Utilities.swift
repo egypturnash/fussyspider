@@ -27,17 +27,16 @@ func extractTags(input: String) -> [String] {
 }
 
 // Get EKReminders from the EventStore, extract their tags and populate .reminders[]
-func fetchReminders(tagFilter : [String]) {
+func fetchReminders(tagFilter : [String], completion: () -> Void) {
     var delegate : AppDelegate?
     var eventStore : EKEventStore?
     
     delegate = UIApplication.sharedApplication().delegate as? AppDelegate
     eventStore = delegate!.eventStore
+    delegate!.fussyReminders = []
     
     let calendars = eventStore!.calendarsForEntityType(EKEntityType.Reminder)
     let predicate = eventStore!.predicateForRemindersInCalendars(calendars)
-    
-    delegate!.fussyReminders = []
     
     eventStore!.fetchRemindersMatchingPredicate(predicate, completion:
         { (_reminders) in
@@ -50,5 +49,6 @@ func fetchReminders(tagFilter : [String]) {
                     }
                 }
             }
+            completion()
     })
 }
