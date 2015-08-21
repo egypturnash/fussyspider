@@ -8,18 +8,19 @@
 
 import UIKit
 import EventKit
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
     var eventStore: EKEventStore?
-    var reminders: [FSReminder] = []
+    var fussyReminders: [FussyReminder] = []
     var tagFilter: [String] = ["#test"] // DEBUG
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        fetchReminders()
+        requestEventAccess()
+        fetchReminders(tagFilter)
         return true
     }
 
@@ -45,24 +46,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func saveReminder(reminder: EKReminder) {
-        if eventStore == nil {
-            requestEventAccess()
-        }
-        do {
-            try eventStore!.saveReminder(reminder, commit: true)
-        }
-        catch let error as NSError {
-            print(error)
-        }
-    }
-    
     func initEventStore() {
         if eventStore == nil {
             eventStore = EKEventStore()
         }
     }
     
+    // requests access to entityType in .eventStore, defaults to EKReminder
     func requestEventAccess(entityType: EKEntityType = EKEntityType.Reminder) {
         if eventStore == nil {
             initEventStore()
@@ -77,45 +67,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
     }
     
-    func fetchReminders() {
-        if eventStore == nil {
-            requestEventAccess()
-        }
-        self.reminders = []
-        let calendars = eventStore!.calendarsForEntityType(EKEntityType.Reminder)
-        let predicate = eventStore!.predicateForRemindersInCalendars(calendars)
-        eventStore!.fetchRemindersMatchingPredicate(predicate, completion:
-            { (_reminders) in
-                for reminder in _reminders! {
-                    let fussyReminder = FSReminder(reminder: reminder, tags: self.extractTags(reminder.title))
-                    self.reminders.append(fussyReminder)
-                }
-        })
-    }
     
-    func extractTags(input: String) -> [String] {
-        var result : [String] = []
-        let slices = input.componentsSeparatedByString(" ")
-        for slice in slices {
-            if slice.substringToIndex(advance(slice.startIndex, 1)) == "#" {
-                result.append(slice)
-            }
-        }
-        return result
-    }
-    
-    // Based on current tag filter, what tasks get displayed
-    func getTaskTable() -> [String] {
-        var result : [String] = []
-        for reminder in self.reminders {
-            for tag in reminder.tags {
-                if tagFilter.contains(tag) {
-                    result.append(reminder.reminder.title)
-                    break
-                }
-            }
-        }
-        return result
-    }
 }
 

@@ -1,15 +1,14 @@
 //
-//  FSReminder.swift
+//  FussyReminder.swift
 //  fussyspider
 //
 //  Created by Evan Ostroski on 8/19/15.
 //  Copyright © 2015 Egypt Urnash. All rights reserved.
 //
 
-import UIKit
 import EventKit
 
-class FSReminder {
+class FussyReminder: NSObject {
     let tags : [String]
     let reminder: EKReminder
     

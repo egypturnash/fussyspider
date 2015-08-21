@@ -6,13 +6,25 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
-class TagEditViewController: UIViewController {
+class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
+    
+    @IBOutlet weak var tagNameField: UITextField!
+    @IBOutlet weak var locationNameField: UITextField!
+    // Add a radius select for the geo-fence?
+    @IBOutlet weak var mapView: MKMapView!
+    
+    
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,7 +32,6 @@ class TagEditViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 

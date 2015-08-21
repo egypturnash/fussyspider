@@ -37,10 +37,6 @@ class fussyspiderTagEditUITests: XCTestCase {
         XCTAssertTrue(app.textFields["Location Field"].exists)
     }
     
-    func testUpdateLocationButton() {
-        XCTAssertTrue(app.buttons["Update Location"].exists)
-    }
-    
     func testSaveButton() {
         XCTAssertTrue(app.navigationBars["Edit Tag"].buttons["Save"].exists)
         app.navigationBars["Edit Tag"].buttons["Save"].tap()

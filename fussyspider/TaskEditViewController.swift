@@ -14,10 +14,14 @@ class TaskEditViewController: UIViewController {
     @IBOutlet weak var reminderNotes: UITextView!
     @IBOutlet weak var reminderDate: UIDatePicker!
     
+    var delegate : AppDelegate?
+    var eventStore : EKEventStore?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        delegate = delegate ?? UIApplication.sharedApplication().delegate as? AppDelegate
+        eventStore = eventStore ?? delegate!.eventStore
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,10 +36,9 @@ class TaskEditViewController: UIViewController {
         
         // Save selected
         if sender!.tag == 1 {
-            let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
-            let reminder = EKReminder(eventStore: delegate!.eventStore!)
+            let reminder = EKReminder(eventStore: eventStore!)
             
-            reminder.calendar = delegate!.eventStore!.defaultCalendarForNewReminders()
+            reminder.calendar = eventStore!.defaultCalendarForNewReminders()
             reminder.title = reminderName.text!
             reminder.notes = reminderNotes.text
             
@@ -43,11 +46,25 @@ class TaskEditViewController: UIViewController {
             let alarm = EKAlarm(absoluteDate: date)
             reminder.addAlarm(alarm)
             
-            delegate!.saveReminder(reminder)
-            delegate!.fetchReminders()
+            saveReminder(reminder)
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-
+    
+    // Save an EKReminder to the eventStore
+    func saveReminder(reminder: EKReminder) {
+        do {
+            try eventStore!.saveReminder(reminder, commit: true)
+        }
+        catch let error as NSError {
+            print(error)
+        }
+    }
+    
+    // Hide keyboard if user taps background
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        reminderName.endEditing(true)
+        reminderNotes.endEditing(true)
+    }
 }

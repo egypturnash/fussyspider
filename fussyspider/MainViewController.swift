@@ -18,40 +18,29 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     @IBOutlet weak var taskTable: UITableView!
     
-    var taskTableArray: [String] = []
+    var delegate : AppDelegate?
+    var eventStore : EKEventStore?
     
-    func tableView(tableView: UITableView,
-        numberOfRowsInSection section: Int) -> Int {
-            return taskTableArray.count
-    }
+    var reminders: [FussyReminder] = []
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("taskRow", forIndexPath: indexPath)
-        let row = indexPath.row
-        
-        cell.textLabel!.text = taskTableArray[row]
-        
-        return cell
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        delegate = delegate ?? UIApplication.sharedApplication().delegate as? AppDelegate
+        eventStore = eventStore ?? delegate!.eventStore
+        
+        fetchReminders(["#test", "#two"])
         
         // The UITableView needs to know where to send events and get data
         self.taskTable.delegate = self
         self.taskTable.dataSource = self
-        
-        // Get the current list of reminders to display
-        let delegate = UIApplication.sharedApplication().delegate as? AppDelegate    
-        taskTableArray = (delegate?.getTaskTable())!
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
+    }   
 
     /*
     // MARK: - Navigation
@@ -62,4 +51,22 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //
+    //  UITableViewDataSource protocol functions
+    //
+    //
+    func tableView(tableView: UITableView,
+        numberOfRowsInSection section: Int) -> Int {
+            return delegate!.fussyReminders.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("taskRow", forIndexPath: indexPath)
+        let row = indexPath.row
+        
+        cell.textLabel!.text = delegate!.fussyReminders[row].reminder.title
+        
+        return cell
+    }
 }
