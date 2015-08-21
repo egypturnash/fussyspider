@@ -1,5 +1,5 @@
 //
-//  fussyspiderPreferencesUITests.swift
+//  PreferencesUITests.swift
 //  fussyspider
 //
 //  Created by Evan Ostroski on 8/16/15.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class fussyspiderPreferencesUITests: XCTestCase {
+class PreferencesUITests: XCTestCase {
     
     let app = XCUIApplication()
         

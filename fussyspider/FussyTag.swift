@@ -8,19 +8,43 @@
 
 import CoreLocation
 
-enum tagType : Int {
-    case ON_ENTRY
-    case ON_EXIT
+enum TagType : Int {
+    case Entry = 0
+    case Exit
 }
 
-class FussyTag: NSObject {
-    let name: String
-    let location: CLLocation
-    let type: tagType
+class FussyTag: NSObject, NSCoding {
+    var name: String!
+    var location: CLLocation!
+    var type: TagType!
     
-    init(name: String, location: CLLocation, type: tagType = tagType.ON_ENTRY) {
+    init(name: String, location: CLLocation, type: TagType = TagType.Entry) {
         self.name = name
         self.location = location
         self.type = type
+    }
+    
+    required init?(coder decoder: NSCoder) {
+        if let name = decoder.decodeObjectForKey("name") as? String {
+            self.name = name
+        }
+        if let location = decoder.decodeObjectForKey("location") as? CLLocation {
+            self.location = location
+        }
+        if let type = TagType(rawValue: decoder.decodeIntegerForKey("type")) {
+            self.type = type
+        }
+    }
+    
+    func encodeWithCoder(encoder: NSCoder) {
+        if let name = self.name {
+            encoder.encodeObject(name, forKey: "name")
+        }
+        if let location = self.location {
+            encoder.encodeObject(location, forKey: "location")
+        }
+        if let type = self.type {
+            encoder.encodeInteger(type.rawValue, forKey: "type")
+        }
     }
 }

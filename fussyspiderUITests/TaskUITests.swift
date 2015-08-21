@@ -1,5 +1,5 @@
 //
-//  fussyspiderTaskUITests.swift
+//  TaskUITests.swift
 //  fussyspider
 //
 //  Created by Evan Ostroski on 8/16/15.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class fussyspiderTaskUITests: XCTestCase {
+class TaskUITests: XCTestCase {
     
     let app = XCUIApplication()
         

@@ -1,5 +1,5 @@
 //
-//  fussyspiderTagEditUITests.swift
+//  TagSelectUITests.swift
 //  fussyspider
 //
 //  Created by Evan Ostroski on 8/16/15.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class fussyspiderTagEditUITests: XCTestCase {
+class TagSelectUITests: XCTestCase {
     
     let app = XCUIApplication()
         
@@ -21,31 +21,25 @@ class fussyspiderTagEditUITests: XCTestCase {
         continueAfterFailure = false
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
-        app.toolbars.buttons["Add"].tap()
+        app.toolbars.buttons["tag filter"].tap()
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testTagNameField() {
-        XCTAssertTrue(app.textFields["Tag Name Field"].exists)
-    }
-    
-    func testLocationField() {
-        XCTAssertTrue(app.textFields["Location Field"].exists)
-    }
-    
-    func testSaveButton() {
-        XCTAssertTrue(app.navigationBars["Edit Tag"].buttons["Save"].exists)
-        app.navigationBars["Edit Tag"].buttons["Save"].tap()
-        XCTAssertTrue(app.navigationBars["fussyspider"].exists)
-    }
-    
+
     func testCancelButton() {
-        XCTAssertTrue(app.navigationBars["Edit Tag"].buttons["Cancel"].exists)
-        app.navigationBars["Edit Tag"].buttons["Cancel"].tap()
+        XCTAssertTrue(app.navigationBars["Select Tags"].buttons["Cancel"].exists)
+        app.navigationBars["Select Tags"].buttons["Cancel"].tap()
         XCTAssertTrue(app.navigationBars["fussyspider"].exists)
+    }
+    func testSaveButton() {
+        XCTAssertTrue(app.navigationBars["Select Tags"].buttons["Save"].exists)
+        app.navigationBars["Select Tags"].buttons["Save"].tap()
+        XCTAssertTrue(app.navigationBars["fussyspider"].exists)
+    }
+    func testTagList() {
+        XCTAssertTrue(app.tables["Empty list"].exists)        
     }
 }

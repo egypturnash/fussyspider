@@ -1,5 +1,5 @@
 //
-//  fussyspiderKalindaUITests.swift
+//  TagEditUITests.swift
 //  fussyspider
 //
 //  Created by Evan Ostroski on 8/16/15.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class fussyspiderKalindaUITests: XCTestCase {
+class fussyspiderTagEditUITests: XCTestCase {
     
     let app = XCUIApplication()
         
@@ -21,7 +21,7 @@ class fussyspiderKalindaUITests: XCTestCase {
         continueAfterFailure = false
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
-        app.toolbars.buttons["birb!"].tap()
+        app.toolbars.buttons["Add"].tap()
     }
     
     override func tearDown() {
@@ -29,17 +29,23 @@ class fussyspiderKalindaUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testDoneButton() {
-        XCTAssertTrue(app.navigationBars["Kalinda"].buttons["Done"].exists)
-        app.navigationBars["Kalinda"].buttons["Done"].tap()
+    func testTagNameField() {
+        XCTAssertTrue(app.textFields["Tag Name Field"].exists)
+    }
+    
+    func testLocationField() {
+        XCTAssertTrue(app.textFields["Location Field"].exists)
+    }
+    
+    func testSaveButton() {
+        XCTAssertTrue(app.navigationBars["Edit Tag"].buttons["Save"].exists)
+        app.navigationBars["Edit Tag"].buttons["Save"].tap()
         XCTAssertTrue(app.navigationBars["fussyspider"].exists)
     }
     
-    func testSwipeLeft() {
-        //TODO
-    }
-    
-    func testSwipeRight() {
-        //TODO
+    func testCancelButton() {
+        XCTAssertTrue(app.navigationBars["Edit Tag"].buttons["Cancel"].exists)
+        app.navigationBars["Edit Tag"].buttons["Cancel"].tap()
+        XCTAssertTrue(app.navigationBars["fussyspider"].exists)
     }
 }

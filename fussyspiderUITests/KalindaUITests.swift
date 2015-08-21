@@ -1,5 +1,5 @@
 //
-//  fussyspiderTagSelectUITests.swift
+//  KalindaUITests.swift
 //  fussyspider
 //
 //  Created by Evan Ostroski on 8/16/15.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class fussyspiderTagSelectUITests: XCTestCase {
+class fussyspiderKalindaUITests: XCTestCase {
     
     let app = XCUIApplication()
         
@@ -21,25 +21,25 @@ class fussyspiderTagSelectUITests: XCTestCase {
         continueAfterFailure = false
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
-        app.toolbars.buttons["tag filter"].tap()
+        app.toolbars.buttons["birb!"].tap()
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-
-    func testCancelButton() {
-        XCTAssertTrue(app.navigationBars["Select Tags"].buttons["Cancel"].exists)
-        app.navigationBars["Select Tags"].buttons["Cancel"].tap()
+    
+    func testDoneButton() {
+        XCTAssertTrue(app.navigationBars["Kalinda"].buttons["Done"].exists)
+        app.navigationBars["Kalinda"].buttons["Done"].tap()
         XCTAssertTrue(app.navigationBars["fussyspider"].exists)
     }
-    func testSaveButton() {
-        XCTAssertTrue(app.navigationBars["Select Tags"].buttons["Save"].exists)
-        app.navigationBars["Select Tags"].buttons["Save"].tap()
-        XCTAssertTrue(app.navigationBars["fussyspider"].exists)
+    
+    func testSwipeLeft() {
+        //TODO
     }
-    func testTagList() {
-        XCTAssertTrue(app.tables["Empty list"].exists)        
+    
+    func testSwipeRight() {
+        //TODO
     }
 }

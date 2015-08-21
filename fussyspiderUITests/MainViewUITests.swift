@@ -1,5 +1,5 @@
 //
-//  fussyspiderUITests.swift
+//  MainViewUITests.swift
 //  fussyspiderUITests
 //
 //  Created by Evan Ostroski on 8/3/15.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class fussyspiderMainViewUITests: XCTestCase {
+class MainViewUITests: XCTestCase {
     
     let app = XCUIApplication()
     

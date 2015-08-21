@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C8358B2A1B81759F00DE5F2F /* fussyspiderTagEditUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8358B291B81759F00DE5F2F /* fussyspiderTagEditUITests.swift */; };
+		C8358B2A1B81759F00DE5F2F /* TagEditUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8358B291B81759F00DE5F2F /* TagEditUITests.swift */; };
 		C84558F81B6FF52900C839D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84558F71B6FF52900C839D9 /* AppDelegate.swift */; };
 		C84558FF1B6FF52900C839D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84558FE1B6FF52900C839D9 /* Assets.xcassets */; };
 		C845590D1B6FF52900C839D9 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C845590C1B6FF52900C839D9 /* AppDelegateTests.swift */; };
-		C84559181B6FF52900C839D9 /* fussyspiderMainViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559171B6FF52900C839D9 /* fussyspiderMainViewUITests.swift */; };
+		C84559181B6FF52900C839D9 /* MainViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559171B6FF52900C839D9 /* MainViewUITests.swift */; };
 		C845592C1B7008FC00C839D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559251B7008FC00C839D9 /* Main.storyboard */; };
 		C845592D1B7008FC00C839D9 /* TaskTagListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559261B7008FC00C839D9 /* TaskTagListTableViewController.swift */; };
 		C845592E1B7008FC00C839D9 /* TagEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559271B7008FC00C839D9 /* TagEditViewController.swift */; };
@@ -28,10 +28,10 @@
 		C8DC48051B86B17B00C51D35 /* FussyTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC48041B86B17B00C51D35 /* FussyTag.swift */; };
 		C8DC48071B86B3AF00C51D35 /* UtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC48061B86B3AF00C51D35 /* UtilitiesTests.swift */; };
 		C8E8A09A1B814D32006CBB65 /* Kalinda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E8A0991B814D32006CBB65 /* Kalinda.storyboard */; };
-		C8E8A09E1B8154E3006CBB65 /* fussyspiderPreferencesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E8A09D1B8154E3006CBB65 /* fussyspiderPreferencesUITests.swift */; };
-		C8E8A0A01B81551A006CBB65 /* fussyspiderTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E8A09F1B81551A006CBB65 /* fussyspiderTaskUITests.swift */; };
-		C8E8A0A21B81553C006CBB65 /* fussyspiderTagSelectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E8A0A11B81553C006CBB65 /* fussyspiderTagSelectUITests.swift */; };
-		C8E8A0A41B815583006CBB65 /* fussyspiderKalindaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E8A0A31B815583006CBB65 /* fussyspiderKalindaUITests.swift */; };
+		C8E8A09E1B8154E3006CBB65 /* PreferencesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E8A09D1B8154E3006CBB65 /* PreferencesUITests.swift */; };
+		C8E8A0A01B81551A006CBB65 /* TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E8A09F1B81551A006CBB65 /* TaskUITests.swift */; };
+		C8E8A0A21B81553C006CBB65 /* TagSelectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E8A0A11B81553C006CBB65 /* TagSelectUITests.swift */; };
+		C8E8A0A41B815583006CBB65 /* KalindaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E8A0A31B815583006CBB65 /* KalindaUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C8358B291B81759F00DE5F2F /* fussyspiderTagEditUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fussyspiderTagEditUITests.swift; sourceTree = "<group>"; };
+		C8358B291B81759F00DE5F2F /* TagEditUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagEditUITests.swift; sourceTree = "<group>"; };
 		C84558F41B6FF52900C839D9 /* fussyspider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fussyspider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84558F71B6FF52900C839D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C84558FE1B6FF52900C839D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 		C845590C1B6FF52900C839D9 /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
 		C845590E1B6FF52900C839D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C84559131B6FF52900C839D9 /* fussyspiderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fussyspiderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C84559171B6FF52900C839D9 /* fussyspiderMainViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fussyspiderMainViewUITests.swift; sourceTree = "<group>"; };
+		C84559171B6FF52900C839D9 /* MainViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewUITests.swift; sourceTree = "<group>"; };
 		C84559191B6FF52900C839D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C84559251B7008FC00C839D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C84559261B7008FC00C839D9 /* TaskTagListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTagListTableViewController.swift; sourceTree = "<group>"; };
@@ -80,10 +80,10 @@
 		C8DC48041B86B17B00C51D35 /* FussyTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FussyTag.swift; sourceTree = "<group>"; };
 		C8DC48061B86B3AF00C51D35 /* UtilitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilitiesTests.swift; sourceTree = "<group>"; };
 		C8E8A0991B814D32006CBB65 /* Kalinda.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Kalinda.storyboard; sourceTree = "<group>"; };
-		C8E8A09D1B8154E3006CBB65 /* fussyspiderPreferencesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fussyspiderPreferencesUITests.swift; sourceTree = "<group>"; };
-		C8E8A09F1B81551A006CBB65 /* fussyspiderTaskUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fussyspiderTaskUITests.swift; sourceTree = "<group>"; };
-		C8E8A0A11B81553C006CBB65 /* fussyspiderTagSelectUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fussyspiderTagSelectUITests.swift; sourceTree = "<group>"; };
-		C8E8A0A31B815583006CBB65 /* fussyspiderKalindaUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fussyspiderKalindaUITests.swift; sourceTree = "<group>"; };
+		C8E8A09D1B8154E3006CBB65 /* PreferencesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesUITests.swift; sourceTree = "<group>"; };
+		C8E8A09F1B81551A006CBB65 /* TaskUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskUITests.swift; sourceTree = "<group>"; };
+		C8E8A0A11B81553C006CBB65 /* TagSelectUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSelectUITests.swift; sourceTree = "<group>"; };
+		C8E8A0A31B815583006CBB65 /* KalindaUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KalindaUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,13 +171,13 @@
 		C84559161B6FF52900C839D9 /* fussyspiderUITests */ = {
 			isa = PBXGroup;
 			children = (
-				C84559171B6FF52900C839D9 /* fussyspiderMainViewUITests.swift */,
+				C84559171B6FF52900C839D9 /* MainViewUITests.swift */,
 				C84559191B6FF52900C839D9 /* Info.plist */,
-				C8E8A09D1B8154E3006CBB65 /* fussyspiderPreferencesUITests.swift */,
-				C8E8A09F1B81551A006CBB65 /* fussyspiderTaskUITests.swift */,
-				C8E8A0A11B81553C006CBB65 /* fussyspiderTagSelectUITests.swift */,
-				C8E8A0A31B815583006CBB65 /* fussyspiderKalindaUITests.swift */,
-				C8358B291B81759F00DE5F2F /* fussyspiderTagEditUITests.swift */,
+				C8E8A09D1B8154E3006CBB65 /* PreferencesUITests.swift */,
+				C8E8A09F1B81551A006CBB65 /* TaskUITests.swift */,
+				C8E8A0A11B81553C006CBB65 /* TagSelectUITests.swift */,
+				C8E8A0A31B815583006CBB65 /* KalindaUITests.swift */,
+				C8358B291B81759F00DE5F2F /* TagEditUITests.swift */,
 			);
 			path = fussyspiderUITests;
 			sourceTree = "<group>";
@@ -350,12 +350,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8358B2A1B81759F00DE5F2F /* fussyspiderTagEditUITests.swift in Sources */,
-				C8E8A0A21B81553C006CBB65 /* fussyspiderTagSelectUITests.swift in Sources */,
-				C8E8A09E1B8154E3006CBB65 /* fussyspiderPreferencesUITests.swift in Sources */,
-				C8E8A0A01B81551A006CBB65 /* fussyspiderTaskUITests.swift in Sources */,
-				C84559181B6FF52900C839D9 /* fussyspiderMainViewUITests.swift in Sources */,
-				C8E8A0A41B815583006CBB65 /* fussyspiderKalindaUITests.swift in Sources */,
+				C8358B2A1B81759F00DE5F2F /* TagEditUITests.swift in Sources */,
+				C8E8A0A21B81553C006CBB65 /* TagSelectUITests.swift in Sources */,
+				C8E8A09E1B8154E3006CBB65 /* PreferencesUITests.swift in Sources */,
+				C8E8A0A01B81551A006CBB65 /* TaskUITests.swift in Sources */,
+				C84559181B6FF52900C839D9 /* MainViewUITests.swift in Sources */,
+				C8E8A0A41B815583006CBB65 /* KalindaUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
