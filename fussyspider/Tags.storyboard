@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KrX-CZ-9Eg">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tagRow" id="KrX-CZ-9Eg">
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KrX-CZ-9Eg" id="VvO-p4-dnU">
@@ -86,7 +86,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zO9-ms-D7F">
                                 <rect key="frame" x="16" y="75" width="48" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="cwC-nn-dIB"/>
+                                    <constraint firstAttribute="width" constant="48" id="t3a-Ys-sQp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -98,40 +98,40 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zA-vn-1Ro">
-                                <rect key="frame" x="16" y="119" width="77" height="26"/>
+                                <rect key="frame" x="16" y="104" width="77" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="77" id="Y7W-06-lmF"/>
+                                    <constraint firstAttribute="width" constant="77" id="ZhY-oo-9yO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AL6-Hl-sgE">
-                                <rect key="frame" x="101" y="121" width="479" height="30"/>
+                                <rect key="frame" x="101" y="106" width="479" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label="Location Field"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hlf-JS-1Rr">
-                                <rect key="frame" x="20" y="151" width="560" height="449"/>
+                                <rect key="frame" x="20" y="144" width="560" height="433"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="AL6-Hl-sgE" firstAttribute="baseline" secondItem="4zA-vn-1Ro" secondAttribute="baseline" id="6kJ-Em-nFH"/>
-                            <constraint firstItem="ua2-GO-nG2" firstAttribute="trailing" secondItem="AL6-Hl-sgE" secondAttribute="trailing" id="7Ye-Le-6sp"/>
-                            <constraint firstItem="Hlf-JS-1Rr" firstAttribute="bottom" secondItem="T73-uj-iZv" secondAttribute="top" id="8OO-h9-DrK"/>
-                            <constraint firstItem="4zA-vn-1Ro" firstAttribute="top" secondItem="ua2-GO-nG2" secondAttribute="bottom" constant="17" id="99L-KZ-yJI"/>
-                            <constraint firstItem="ua2-GO-nG2" firstAttribute="top" secondItem="ebi-Jp-GcA" secondAttribute="bottom" constant="8" symbolic="YES" id="G66-2X-D0q"/>
-                            <constraint firstItem="Hlf-JS-1Rr" firstAttribute="trailing" secondItem="0Ee-ax-qfb" secondAttribute="trailingMargin" id="LEc-RJ-SqY"/>
-                            <constraint firstItem="AL6-Hl-sgE" firstAttribute="top" secondItem="ua2-GO-nG2" secondAttribute="bottom" constant="19" id="OcA-l6-bC6"/>
-                            <constraint firstItem="4zA-vn-1Ro" firstAttribute="leading" secondItem="zO9-ms-D7F" secondAttribute="leading" id="S2Z-wz-PsG"/>
-                            <constraint firstItem="Hlf-JS-1Rr" firstAttribute="top" secondItem="4zA-vn-1Ro" secondAttribute="bottom" constant="6" id="WoT-yx-WKz"/>
-                            <constraint firstItem="Hlf-JS-1Rr" firstAttribute="leading" secondItem="0Ee-ax-qfb" secondAttribute="leadingMargin" id="eUP-Gn-Y03"/>
-                            <constraint firstItem="AL6-Hl-sgE" firstAttribute="trailing" secondItem="Hlf-JS-1Rr" secondAttribute="trailing" id="eie-MZ-Qua"/>
-                            <constraint firstItem="ua2-GO-nG2" firstAttribute="leading" secondItem="zO9-ms-D7F" secondAttribute="trailing" constant="8" symbolic="YES" id="mbf-Lm-zCr"/>
-                            <constraint firstItem="AL6-Hl-sgE" firstAttribute="leading" secondItem="4zA-vn-1Ro" secondAttribute="trailing" constant="8" symbolic="YES" id="nE5-oD-ynH"/>
-                            <constraint firstItem="zO9-ms-D7F" firstAttribute="leading" secondItem="0Ee-ax-qfb" secondAttribute="leadingMargin" constant="-4" id="sz6-vb-eeH"/>
-                            <constraint firstItem="zO9-ms-D7F" firstAttribute="baseline" secondItem="ua2-GO-nG2" secondAttribute="baseline" id="xHe-S1-32c"/>
+                            <constraint firstItem="zO9-ms-D7F" firstAttribute="baseline" secondItem="ua2-GO-nG2" secondAttribute="baseline" id="0M8-wt-9ia"/>
+                            <constraint firstItem="ua2-GO-nG2" firstAttribute="trailing" secondItem="AL6-Hl-sgE" secondAttribute="trailing" id="8fW-D1-VzL"/>
+                            <constraint firstItem="T73-uj-iZv" firstAttribute="top" secondItem="Hlf-JS-1Rr" secondAttribute="bottom" constant="23" id="8wU-3u-Ru4"/>
+                            <constraint firstItem="ua2-GO-nG2" firstAttribute="leading" secondItem="zO9-ms-D7F" secondAttribute="trailing" constant="8" symbolic="YES" id="AZe-XA-Tbt"/>
+                            <constraint firstItem="4zA-vn-1Ro" firstAttribute="top" secondItem="zO9-ms-D7F" secondAttribute="bottom" constant="8" symbolic="YES" id="GAh-t4-if5"/>
+                            <constraint firstItem="Hlf-JS-1Rr" firstAttribute="top" secondItem="AL6-Hl-sgE" secondAttribute="bottom" constant="8" symbolic="YES" id="M24-it-fhL"/>
+                            <constraint firstItem="4zA-vn-1Ro" firstAttribute="baseline" secondItem="AL6-Hl-sgE" secondAttribute="baseline" id="YZC-pv-wtl"/>
+                            <constraint firstItem="4zA-vn-1Ro" firstAttribute="leading" secondItem="zO9-ms-D7F" secondAttribute="leading" id="cVK-cQ-VzB"/>
+                            <constraint firstItem="AL6-Hl-sgE" firstAttribute="top" secondItem="ua2-GO-nG2" secondAttribute="bottom" constant="4" id="dHT-I8-8Ra"/>
+                            <constraint firstItem="Hlf-JS-1Rr" firstAttribute="leading" secondItem="0Ee-ax-qfb" secondAttribute="leadingMargin" id="jrE-HL-wHS"/>
+                            <constraint firstItem="ua2-GO-nG2" firstAttribute="top" secondItem="ebi-Jp-GcA" secondAttribute="bottom" constant="8" symbolic="YES" id="plv-4Z-auR"/>
+                            <constraint firstItem="Hlf-JS-1Rr" firstAttribute="trailing" secondItem="AL6-Hl-sgE" secondAttribute="trailing" id="q8e-m8-SIl"/>
+                            <constraint firstItem="zO9-ms-D7F" firstAttribute="leading" secondItem="0Ee-ax-qfb" secondAttribute="leadingMargin" constant="-4" id="r7T-wl-m7v"/>
+                            <constraint firstItem="Hlf-JS-1Rr" firstAttribute="trailing" secondItem="0Ee-ax-qfb" secondAttribute="trailingMargin" id="uqC-Yu-dTn"/>
+                            <constraint firstItem="AL6-Hl-sgE" firstAttribute="leading" secondItem="4zA-vn-1Ro" secondAttribute="trailing" constant="8" symbolic="YES" id="zrc-Xy-mAJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Tag" id="5ZF-Er-afi">
@@ -141,7 +141,7 @@
                                 <segue destination="rUW-Fm-Mt6" kind="show" id="HWn-mA-S5f"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="jrO-Vm-5D4">
+                        <barButtonItem key="rightBarButtonItem" tag="1" systemItem="save" id="jrO-Vm-5D4">
                             <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="rUW-Fm-Mt6" kind="show" id="kxI-EZ-B0I"/>
@@ -179,7 +179,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kxI-EZ-B0I"/>
+        <segue reference="wm7-K6-6kj"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
 </document>

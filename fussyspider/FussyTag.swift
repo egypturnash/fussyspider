@@ -8,21 +8,45 @@
 
 import CoreLocation
 
-enum TagType : Int {
-    case Entry = 0
-    case Exit
-}
-
+/// Location-based tag with serialization
 class FussyTag: NSObject, NSCoding {
+    
+    /// The tag name
     var name: String!
+    
+    /// The location associated with this tag
     var location: CLLocation!
+    
+    /// The tag notification type
     var type: TagType!
     
+    /**
+    Location-based notification type
+    
+    - Entry: Notification on entry of location
+    - Exit: Notification on exit of location
+    */
+    enum TagType : Int {
+        case Entry = 0
+        case Exit
+    }
+    
+    /**
+        Initializes a new FussyTag
+    
+        :param: name The name of the tag
+        :param: location The location of the tag
+        :param: type The notification type of the tag
+    */
     init(name: String, location: CLLocation, type: TagType = TagType.Entry) {
         self.name = name
         self.location = location
         self.type = type
     }
+    
+    
+    //
+    // MARK: NSCoding
     
     required init?(coder decoder: NSCoder) {
         if let name = decoder.decodeObjectForKey("name") as? String {

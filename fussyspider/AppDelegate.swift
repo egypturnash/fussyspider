@@ -16,9 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
     var eventStore: EKEventStore?
     var fussyReminders: [FussyReminder] = []
+    var fussyTags: [FussyTag] = []
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         requestEventAccess()
+        loadAllFussyTags()
         return true
     }
 
@@ -30,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        saveAllFussyTags()
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -38,10 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
     }
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        saveAllFussyTags()
     }
     
     func initEventStore() {
@@ -50,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
     }
     
-    // requests access to entityType in .eventStore, defaults to EKReminder
+    /// Request access to entityType in .eventStore, defaults to EKReminder
     func requestEventAccess(entityType: EKEntityType = EKEntityType.Reminder) {
         if eventStore == nil {
             initEventStore()
@@ -65,6 +70,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         })
     }
     
+    /// Loads AppDelegate.fussyTags with from NSUserDefaults
+    func loadAllFussyTags() {
+        fussyTags = []
+        if let tags = NSUserDefaults.standardUserDefaults().arrayForKey("fussyTags") {
+            for tag in tags {
+                if let fussyTag = NSKeyedUnarchiver.unarchiveObjectWithData(tag as! NSData) as? FussyTag {
+                    fussyTags.append(fussyTag)
+                }
+            }
+        }
+    }
     
+    /// Saves AppDelegatefussyTags to NSUserDefaults
+    func saveAllFussyTags() {
+        let tags = NSMutableArray()
+        for fussyTag in fussyTags {
+            let tag = NSKeyedArchiver.archivedDataWithRootObject(fussyTag)
+            tags.addObject(tag)
+        }
+        NSUserDefaults.standardUserDefaults().setObject(tags, forKey: "fussyTags")
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
 }
 
