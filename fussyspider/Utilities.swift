@@ -19,9 +19,11 @@ func extractTags(input: String) -> [String] {
     var result : [String] = []
     let slices = input.componentsSeparatedByString(" ")
     for slice in slices {
-        if slice.substringToIndex(advance(slice.startIndex, 1)) == "#" {
-            result.append(slice)
-        }
+        if slice != "" {
+            if slice.substringToIndex(advance(slice.startIndex, 1)) == "#" {
+                result.append(slice)
+            }
+        }        
     }
     return result
 }

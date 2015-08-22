@@ -40,6 +40,6 @@ class TagSelectUITests: XCTestCase {
         XCTAssertTrue(app.navigationBars["fussyspider"].exists)
     }
     func testTagList() {
-        XCTAssertTrue(app.tables["Empty list"].exists)        
+        XCTAssertTrue(app.tables.staticTexts["Select All"].exists)
     }
 }
