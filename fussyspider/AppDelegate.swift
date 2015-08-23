@@ -14,11 +14,15 @@ import CoreLocation
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
-    var eventStore: EKEventStore?
     var fussyReminders: [FussyReminder] = []
     var fussyTags: [FussyTag] = []
+   
+    let eventStore = EKEventStore()
+    let locationManager = CLLocationManager()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        locationManager.delegate = self                // Add this line
+        locationManager.requestAlwaysAuthorization()
         requestEventAccess()
         loadAllFussyTags()
         return true
@@ -49,18 +53,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         saveAllFussyTags()
     }
     
-    func initEventStore() {
-        if eventStore == nil {
-            eventStore = EKEventStore()
+    //
+    // MARK: CLLocationManager
+    //
+    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        if region is CLCircularRegion {
+            handleRegionEvent(region)
         }
     }
     
+    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
+        if region is CLCircularRegion {
+            handleRegionEvent(region)
+        }
+    }
+    
+    func handleRegionEvent(region: CLRegion) {
+        print("Geofence triggered!")
+    }
+    //
+    // MARK: EventKit
+    //
     /// Request access to entityType in .eventStore, defaults to EKReminder
     func requestEventAccess(entityType: EKEntityType = EKEntityType.Reminder) {
-        if eventStore == nil {
-            initEventStore()
-        }
-        eventStore!.requestAccessToEntityType(entityType, completion:
+        eventStore.requestAccessToEntityType(entityType, completion:
             {(granted, error) in
                 // Proper error handling eventually
                 if !granted {
@@ -70,6 +86,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         })
     }
     
+    //
+    // MARK: NSUserDefaults
+    //
     /// Loads AppDelegate.fussyTags with from NSUserDefaults
     func loadAllFussyTags() {
         fussyTags = []
