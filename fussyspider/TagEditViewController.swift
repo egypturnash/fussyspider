@@ -10,21 +10,20 @@ import CoreLocation
 import MapKit
 
 class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-
+    
+    var matchingItems: [MKMapItem] = [MKMapItem]()
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var tagNameField: UITextField!
     @IBOutlet weak var locationNameField: UITextField!
     // Add a radius select for the geo-fence?
     @IBOutlet weak var mapView: MKMapView!
-    var matchingItems: [MKMapItem] = [MKMapItem]()
     
     @IBAction func locationFieldReturn(sender: AnyObject) {
         sender.resignFirstResponder()
         mapView.removeAnnotations(mapView.annotations)
         self.performSearch()
     }
-    
-    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +57,13 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                     saveTag(tag)
                 }
             } else {
-                /*
-                let alert = UIAlertController(title: "Error", message: "Please select one location", preferredStyle: <#T##UIAlertControllerStyle#>)
-                */
+                
+                let alert = UIAlertController(title: "Error", message: "Please select one location", preferredStyle: UIAlertControllerStyle.Alert)
+                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (action) -> Void in
+                    print("Error closed")
+                }
+                alert.addAction(okAction)
+                self.presentViewController(alert, animated: true, completion: nil)                
             }
         }
         // Get the new view controller using segue.destinationViewController.
@@ -68,8 +71,10 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
     
     func saveTag(tag: FussyTag) {
-        let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
-        delegate?.fussyTags.append(tag)
+        if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            delegate.fussyTags.append(tag)
+            delegate.saveAllFussyTags()
+        }
     }
     
     func performSearch() {
