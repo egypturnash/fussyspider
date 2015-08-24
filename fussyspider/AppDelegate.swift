@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     let locationManager = CLLocationManager()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        locationManager.delegate = self                // Add this line
+        locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         requestEventAccess()
         loadAllFussyTags()
@@ -68,9 +68,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
     }
     
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        locationManager.requestAlwaysAuthorization()
+    }
+    
     func handleRegionEvent(region: CLRegion) {
         print("Geofence triggered!")
     }
+    
     //
     // MARK: EventKit
     //

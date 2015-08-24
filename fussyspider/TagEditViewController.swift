@@ -16,7 +16,13 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     @IBOutlet weak var locationNameField: UITextField!
     // Add a radius select for the geo-fence?
     @IBOutlet weak var mapView: MKMapView!
+    var matchingItems: [MKMapItem] = [MKMapItem]()
     
+    @IBAction func locationFieldReturn(sender: AnyObject) {
+        sender.resignFirstResponder()
+        mapView.removeAnnotations(mapView.annotations)
+        self.performSearch()
+    }
     
     let locationManager = CLLocationManager()
     
@@ -37,16 +43,24 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
 
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Save selected
         if sender!.tag == 1 {
-            if let tagName = tagNameField!.text {
-                if let location = locationManager.location {
+            if mapView.selectedAnnotations.count == 1 {
+                let latitude = mapView.selectedAnnotations[0].coordinate.latitude
+                let longitude = mapView.selectedAnnotations[0].coordinate.longitude
+                let location = CLLocation(latitude: latitude, longitude: longitude)
+                
+                if let tagName = tagNameField!.text {
                     let tag = FussyTag(name: tagName, location: location)
                     saveTag(tag)
                 }
+            } else {
+                /*
+                let alert = UIAlertController(title: "Error", message: "Please select one location", preferredStyle: <#T##UIAlertControllerStyle#>)
+                */
             }
         }
         // Get the new view controller using segue.destinationViewController.
@@ -56,5 +70,41 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     func saveTag(tag: FussyTag) {
         let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
         delegate?.fussyTags.append(tag)
+    }
+    
+    func performSearch() {
+        matchingItems.removeAll()
+        let request = MKLocalSearchRequest()
+        request.naturalLanguageQuery = locationNameField.text
+        request.region = mapView.region
+        
+        let search = MKLocalSearch(request: request)
+
+        search.startWithCompletionHandler({(response:
+            MKLocalSearchResponse?,
+            error: NSError?) in
+            
+            if error != nil {
+                print("Error: \(error!.localizedDescription)")
+            } else if response != nil {
+                if response!.mapItems.count == 0 {
+                    print("No matches found")
+                } else {
+                    print("Matches found")
+                    
+                    for item in response!.mapItems {
+                        print("Name = \(item.name)")
+                        
+                        self.matchingItems.append(item as MKMapItem)
+                        print("Matching items = \(self.matchingItems.count)")
+                        
+                        let annotation = MKPointAnnotation()
+                        annotation.coordinate = item.placemark.coordinate
+                        annotation.title = item.name
+                        self.mapView.addAnnotation(annotation)
+                    }
+                }
+            }
+        })
     }
 }

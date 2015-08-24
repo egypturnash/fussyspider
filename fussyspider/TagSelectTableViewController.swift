@@ -37,7 +37,7 @@ class TagSelectTableViewController: UITableViewController {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-            return delegate.fussyTags.count
+            return delegate.fussyTags.count + 1
         }
         return 0
     }
