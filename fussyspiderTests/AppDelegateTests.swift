@@ -24,12 +24,6 @@ class AppDelegateTests: XCTestCase {
         super.tearDown()
     }
     
-    func testInitEventStore() {
-        testDelegate!.eventStore = nil
-        testDelegate!.initEventStore()
-        XCTAssertTrue(testDelegate!.eventStore != nil)
-    }
-    
     func testRequestEventAccess() {
         testDelegate!.requestEventAccess()
         //XCTAssertTrue(testDelegate!.eventStore!.authorizationStatusForEntityType(EKEntityType.Reminder) == EKAuthorizationStatus.Authorized)

@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
     var fussyReminders: [FussyReminder] = []
     var fussyTags: [FussyTag] = []
+    var tagFilter: [String] = []
    
     let eventStore = EKEventStore()
     let locationManager = CLLocationManager()

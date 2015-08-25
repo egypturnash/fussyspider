@@ -34,12 +34,16 @@ class fussyspiderTagEditUITests: XCTestCase {
     }
     
     func testLocationField() {
-        XCTAssertTrue(app.textFields["Location Field"].exists)
+        XCTAssertTrue(app.searchFields["Location Field"].exists)
     }
     
     func testSaveButton() {
-        XCTAssertTrue(app.navigationBars["Edit Tag"].buttons["Save"].exists)
-        app.navigationBars["Edit Tag"].buttons["Save"].tap()
+        let navBar = app.navigationBars["Edit Tag"]
+        XCTAssertTrue(navBar.buttons["Save"].exists)
+        navBar.buttons["Save"].tap()
+        XCTAssertTrue(app.alerts["Error"].exists)
+        app.alerts["Error"].collectionViews.buttons["Ok"].tap()
+        navBar.buttons["Cancel"].tap()
         XCTAssertTrue(app.navigationBars["fussyspider"].exists)
     }
     

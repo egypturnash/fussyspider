@@ -27,7 +27,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         delegate = delegate ?? UIApplication.sharedApplication().delegate as? AppDelegate
         eventStore = eventStore ?? delegate!.eventStore
         
-        fetchReminders(["#test", "#two"], completion: {
+        let tagFilter = delegate?.tagFilter
+        
+        fetchReminders(tagFilter!, completion: {
             self.taskTable.reloadData()
         })
         

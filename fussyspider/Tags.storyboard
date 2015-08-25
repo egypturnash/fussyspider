@@ -31,14 +31,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Select Tags" id="aiB-uu-d9r">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="o41-3L-Ttt">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="o41-3L-Ttt">
                             <connections>
                                 <segue destination="rUW-Fm-Mt6" kind="show" id="wm7-K6-6kj"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Soo-ju-dRQ">
-                            <connections>
-                                <segue destination="rUW-Fm-Mt6" kind="show" id="1AG-aK-D82"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

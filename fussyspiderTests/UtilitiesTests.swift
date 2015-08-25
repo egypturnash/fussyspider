@@ -25,7 +25,7 @@ class UtilitiesTests: XCTestCase {
 
     func testExtractTags() {
         let testInput = "hi #this should h#ve only #two hashtags#"
-        let testResult = ["#this", "#two"]
+        let testResult = ["this", "two"]
         XCTAssertEqual(extractTags(testInput), testResult)
     }
 

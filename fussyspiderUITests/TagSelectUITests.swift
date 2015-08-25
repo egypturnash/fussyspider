@@ -29,17 +29,12 @@ class TagSelectUITests: XCTestCase {
         super.tearDown()
     }
 
-    func testCancelButton() {
-        XCTAssertTrue(app.navigationBars["Select Tags"].buttons["Cancel"].exists)
-        app.navigationBars["Select Tags"].buttons["Cancel"].tap()
-        XCTAssertTrue(app.navigationBars["fussyspider"].exists)
-    }
-    func testSaveButton() {
-        XCTAssertTrue(app.navigationBars["Select Tags"].buttons["Save"].exists)
-        app.navigationBars["Select Tags"].buttons["Save"].tap()
+    func testDoneButton() {
+        XCTAssertTrue(app.navigationBars["Select Tags"].buttons["Done"].exists)
+        app.navigationBars["Select Tags"].buttons["Done"].tap()
         XCTAssertTrue(app.navigationBars["fussyspider"].exists)
     }
     func testTagList() {
-        XCTAssertTrue(app.tables.staticTexts["Select All"].exists)
+        XCTAssertTrue(app.tables.staticTexts["Toggle All"].exists)
     }
 }

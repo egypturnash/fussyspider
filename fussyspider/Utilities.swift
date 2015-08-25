@@ -18,9 +18,10 @@ import EventKit
 func extractTags(input: String) -> [String] {
     var result : [String] = []
     let slices = input.componentsSeparatedByString(" ")
-    for slice in slices {
+    for var slice in slices {
         if slice != "" {
             if slice.substringToIndex(advance(slice.startIndex, 1)) == "#" {
+                slice.removeAtIndex(slice.startIndex)
                 result.append(slice)
             }
         }        

@@ -72,6 +72,11 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     func saveTag(tag: FussyTag) {
         if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            for possibleUpdate in delegate.fussyTags {
+                if possibleUpdate.name == tag.name {
+                    delegate.fussyTags.removeAtIndex(delegate.fussyTags.indexOf(possibleUpdate)!)
+                }
+            }
             delegate.fussyTags.append(tag)
             delegate.saveAllFussyTags()
         }

@@ -9,6 +9,8 @@
 import UIKit
 
 class TagSelectTableViewController: UITableViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,13 +49,50 @@ class TagSelectTableViewController: UITableViewController {
         let row = indexPath.row
         
         if row == 0 {
-            cell.textLabel!.text = "Select All"
+            cell.textLabel!.text = "Toggle All"
         } else {
             if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+                let tagName = delegate.fussyTags[row-1].name
+                let tagFilter = delegate.tagFilter
+                
+                if tagFilter.contains(tagName) {
+                    cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                }
                 cell.textLabel!.text = delegate.fussyTags[row-1].name
             }
         }
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        toggleCell(tableView, indexPath: indexPath)
+    }
+    
+    func toggleCell(tableView: UITableView, indexPath: NSIndexPath) {
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+            let tagName = cell.textLabel!.text!
+            let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
+            var tagFilter = delegate!.tagFilter
+            
+            // SELECT ALL
+            if indexPath.row == 0 {
+                tagFilter = []
+                for index in 1...(tableView.numberOfRowsInSection(0)) {
+                    toggleCell(tableView, indexPath: NSIndexPath(forRow: index, inSection: 0))
+                }
+                return
+            }
+            
+            if !tagFilter.contains(tagName) {
+                tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.Checkmark
+                tagFilter.append(tagName)
+            } else {
+                tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.None
+                tagFilter.removeAtIndex(tagFilter.indexOf(tagName)!)
+            }
+            
+            delegate!.tagFilter = tagFilter
+        }
     }
 
     /*
@@ -91,14 +130,15 @@ class TagSelectTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        // Save selected
+        if sender!.tag == 1 {
+            // TODO Look at selected rows and update appDelegate
+        }
     }
-    */
 
 }
