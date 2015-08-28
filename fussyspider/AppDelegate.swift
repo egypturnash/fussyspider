@@ -102,8 +102,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
         
         let region = CLCircularRegion(center: tag.location.coordinate, radius: CLLocationDistance(tag.radius!), identifier: tag.name!)
-        region.notifyOnEntry = (tag.type == .Entry)
-        region.notifyOnExit = (tag.type == .Exit)
+        region.notifyOnEntry = ([.Entry, .Both].contains(tag.type))
+        region.notifyOnExit = ([.Exit, .Both].contains(tag.type))
         
         locationManager.startMonitoringForRegion(region)
         print("Registered region for \(tag.name)")

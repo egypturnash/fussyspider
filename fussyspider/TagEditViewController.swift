@@ -16,7 +16,9 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     @IBOutlet weak var tagNameField: UITextField!
     @IBOutlet weak var locationNameField: UITextField!
-    // Add a radius select for the geo-fence?
+    @IBOutlet weak var onEntrySwitch: UISwitch!
+    @IBOutlet weak var onExitSwitch: UISwitch!
+    @IBOutlet weak var radiusSlider: UISlider!    
     @IBOutlet weak var mapView: MKMapView!
     
     @IBAction func locationFieldReturn(sender: AnyObject) {
@@ -51,13 +53,22 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                 let latitude = mapView.selectedAnnotations[0].coordinate.latitude
                 let longitude = mapView.selectedAnnotations[0].coordinate.longitude
                 let location = CLLocation(latitude: latitude, longitude: longitude)
+                var tagType : FussyTag.TagType
                 
                 if let tagName = tagNameField!.text?.stringByTrimmingCharactersInSet(.whitespaceCharacterSet()) {
                     let slices = tagName.componentsSeparatedByString(" ")
                     if slices.count > 1 {
                         print("Multiple words for tag, only first is used!")
                     }
-                    let tag = FussyTag(name: slices[0], location: location)
+                    if onEntrySwitch.on && onExitSwitch.on {
+                        tagType = .Both
+                    } else if onEntrySwitch.on {
+                        tagType = .Entry
+                    } else {
+                        tagType = .Exit
+                    }
+                    let radius = radiusSlider.value
+                    let tag = FussyTag(name: slices[0], location: location, type: tagType, radius: radius)
                     saveTag(tag)
                 }
             } else {
