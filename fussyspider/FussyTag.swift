@@ -20,6 +20,9 @@ class FussyTag: NSObject, NSCoding {
     /// The tag notification type
     var type: TagType!
     
+    /// Radius of the geofence
+    var radius: Int!
+    
     /**
     Location-based notification type
     
@@ -38,10 +41,11 @@ class FussyTag: NSObject, NSCoding {
         :param: location The location of the tag
         :param: type The notification type of the tag
     */
-    init(name: String, location: CLLocation, type: TagType = TagType.Entry) {
+    init(name: String, location: CLLocation, type: TagType = .Exit, radius: Int = 100) {
         self.name = name
         self.location = location
         self.type = type
+        self.radius = radius
     }
     
     
@@ -58,6 +62,7 @@ class FussyTag: NSObject, NSCoding {
         if let type = TagType(rawValue: decoder.decodeIntegerForKey("type")) {
             self.type = type
         }
+        self.radius = decoder.decodeIntegerForKey("radius")
     }
     
     func encodeWithCoder(encoder: NSCoder) {
@@ -69,6 +74,9 @@ class FussyTag: NSObject, NSCoding {
         }
         if let type = self.type {
             encoder.encodeInteger(type.rawValue, forKey: "type")
+        }
+        if let radius = self.radius {
+            encoder.encodeInteger(radius, forKey: "radius")
         }
     }
 }

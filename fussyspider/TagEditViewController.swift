@@ -57,7 +57,6 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                     saveTag(tag)
                 }
             } else {
-                
                 let alert = UIAlertController(title: "Error", message: "Please select one location", preferredStyle: UIAlertControllerStyle.Alert)
                 let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (action) -> Void in
                     print("Error closed")

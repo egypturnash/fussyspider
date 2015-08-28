@@ -26,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager.requestAlwaysAuthorization()
         requestEventAccess()
         loadAllFussyTags()
+        let settings = UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil)
+        application.registerUserNotificationSettings(settings)
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
         return true
     }
 
@@ -73,15 +76,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager.requestAlwaysAuthorization()
     }
     
+    func locationManager(manager: CLLocationManager, monitoringDidFailForRegion region: CLRegion?, withError error: NSError) {
+        print("Monitoring failed for region with name: \(region!.identifier)")
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Location Manager failed with the following error: \(error)")
+    }
+    
     func handleRegionEvent(region: CLRegion) {
+        // Update this to only notify for tags w/ reminders
         print("Geofence triggered!")
+        let notification = UILocalNotification()
+        notification.alertBody = region.identifier
+        notification.soundName = "Default";
+        UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+    }
+    
+    func registerFenceForTag(tag: FussyTag) {
+        if !CLLocationManager.isMonitoringAvailableForClass(CLCircularRegion) {
+            print("This device lacks support for geofencing.")
+        }
+        if CLLocationManager.authorizationStatus() != .AuthorizedAlways {
+            print("The geofence will save but you need to grant permission for the app to access the device location.")
+        }
+        
+        let region = CLCircularRegion(center: tag.location.coordinate, radius: CLLocationDistance(tag.radius!), identifier: tag.name!)
+        region.notifyOnEntry = (tag.type == .Entry)
+        region.notifyOnExit = (tag.type == .Exit)
+        
+        locationManager.startMonitoringForRegion(region)
+        print("Registered region for \(tag.name)")
     }
     
     //
     // MARK: EventKit
     //
     /// Request access to entityType in .eventStore, defaults to EKReminder
-    func requestEventAccess(entityType: EKEntityType = EKEntityType.Reminder) {
+    func requestEventAccess(entityType: EKEntityType = .Reminder) {
         eventStore.requestAccessToEntityType(entityType, completion:
             {(granted, error) in
                 // Proper error handling eventually
@@ -101,6 +133,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         if let tags = NSUserDefaults.standardUserDefaults().arrayForKey("fussyTags") {
             for tag in tags {
                 if let fussyTag = NSKeyedUnarchiver.unarchiveObjectWithData(tag as! NSData) as? FussyTag {
+                    registerFenceForTag(fussyTag)
                     fussyTags.append(fussyTag)
                 }
             }
