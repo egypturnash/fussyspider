@@ -52,14 +52,18 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                 let longitude = mapView.selectedAnnotations[0].coordinate.longitude
                 let location = CLLocation(latitude: latitude, longitude: longitude)
                 
-                if let tagName = tagNameField!.text {
-                    let tag = FussyTag(name: tagName, location: location)
+                if let tagName = tagNameField!.text?.stringByTrimmingCharactersInSet(.whitespaceCharacterSet()) {
+                    let slices = tagName.componentsSeparatedByString(" ")
+                    if slices.count > 1 {
+                        print("Multiple words for tag, only first is used!")
+                    }
+                    let tag = FussyTag(name: slices[0], location: location)
                     saveTag(tag)
                 }
             } else {
                 let alert = UIAlertController(title: "Error", message: "Please select one location", preferredStyle: UIAlertControllerStyle.Alert)
                 let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (action) -> Void in
-                    print("Error closed")
+                    print("Alert closed")
                 }
                 alert.addAction(okAction)
                 self.presentViewController(alert, animated: true, completion: nil)                
@@ -78,6 +82,7 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             }
             delegate.fussyTags.append(tag)
             delegate.saveAllFussyTags()
+            delegate.registerFenceForTag(tag)
         }
     }
     
