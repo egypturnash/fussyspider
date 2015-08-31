@@ -13,15 +13,11 @@ class TaskEditViewController: UIViewController {
     @IBOutlet weak var reminderName: UITextField!
     @IBOutlet weak var reminderNotes: UITextView!
     @IBOutlet weak var reminderDate: UIDatePicker!
-    
-    var delegate : AppDelegate?
-    var eventStore : EKEventStore?
-    
+
+    let eventStore = EKEventStore()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        delegate = delegate ?? UIApplication.sharedApplication().delegate as? AppDelegate
-        eventStore = eventStore ?? delegate!.eventStore
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,9 +32,9 @@ class TaskEditViewController: UIViewController {
         
         // Save selected
         if sender!.tag == 1 {
-            let reminder = EKReminder(eventStore: eventStore!)
+            let reminder = EKReminder(eventStore: eventStore)
             
-            reminder.calendar = eventStore!.defaultCalendarForNewReminders()
+            reminder.calendar = eventStore.defaultCalendarForNewReminders()
             reminder.title = reminderName.text!
             reminder.notes = reminderNotes.text
             
@@ -55,7 +51,7 @@ class TaskEditViewController: UIViewController {
     // Save an EKReminder to the eventStore
     func saveReminder(reminder: EKReminder) {
         do {
-            try eventStore!.saveReminder(reminder, commit: true)
+            try eventStore.saveReminder(reminder, commit: true)
         }
         catch let error as NSError {
             print(error)

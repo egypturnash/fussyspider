@@ -10,8 +10,8 @@ import UIKit
 
 class TagSelectTableViewController: UITableViewController {
     
+    let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,18 +30,11 @@ class TagSelectTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-            return delegate.fussyTags.count + 1
-        }
-        return 0
+        return delegate.fussyTags.count + 1
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -51,15 +44,13 @@ class TagSelectTableViewController: UITableViewController {
         if row == 0 {
             cell.textLabel!.text = "Toggle All"
         } else {
-            if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-                let tagName = delegate.fussyTags[row-1].name
-                let tagFilter = delegate.tagFilter
-                
-                if tagFilter.contains(tagName) {
-                    cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-                }
-                cell.textLabel!.text = delegate.fussyTags[row-1].name
+            let tagName = delegate.fussyTags[row-1].name
+            let tagFilter = delegate.tagFilter
+            
+            if tagFilter.contains(tagName) {
+                cell.accessoryType = UITableViewCellAccessoryType.Checkmark
             }
+            cell.textLabel!.text = delegate.fussyTags[row-1].name
         }
         return cell
     }
@@ -71,8 +62,7 @@ class TagSelectTableViewController: UITableViewController {
     func toggleCell(tableView: UITableView, indexPath: NSIndexPath) {
         if let cell = tableView.cellForRowAtIndexPath(indexPath) {
             let tagName = cell.textLabel!.text!
-            let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
-            var tagFilter = delegate!.tagFilter
+            var tagFilter = delegate.tagFilter
             
             // SELECT ALL
             if indexPath.row == 0 {
@@ -91,7 +81,7 @@ class TagSelectTableViewController: UITableViewController {
                 tagFilter.removeAtIndex(tagFilter.indexOf(tagName)!)
             }
             
-            delegate!.tagFilter = tagFilter
+            delegate.tagFilter = tagFilter
         }
     }
 
@@ -140,5 +130,4 @@ class TagSelectTableViewController: UITableViewController {
             // TODO Look at selected rows and update appDelegate
         }
     }
-
 }

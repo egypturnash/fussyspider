@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import EventKit
 
 
 // Error started after deleting IBOutlet to table
@@ -18,20 +17,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     @IBOutlet weak var taskTable: UITableView!
     
-    var delegate : AppDelegate?
-    var eventStore : EKEventStore?
+    let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        delegate = delegate ?? UIApplication.sharedApplication().delegate as? AppDelegate
-        eventStore = eventStore ?? delegate!.eventStore
+        let tagFilter = delegate.tagFilter
         
-        let tagFilter = delegate?.tagFilter
-        
-        fetchReminders(tagFilter!, completion: {
-            self.taskTable.reloadData()
-        })
+        checkAuthorizationStatus(authorized: {
+            fetchReminders(tagFilter, completion: {
+                self.taskTable.reloadData()
+            })
+        })        
         
         // The UITableView needs to know where to send events and get data
         self.taskTable.delegate = self
@@ -41,7 +38,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }   
+    }
 
     /*
     // MARK: - Navigation
@@ -59,14 +56,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //
     func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
-            return delegate!.fussyReminders.count
+            return delegate.fussyReminders.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("taskRow", forIndexPath: indexPath)
         let row = indexPath.row
         
-        cell.textLabel!.text = delegate!.fussyReminders[row].reminder.title
+        cell.textLabel!.text = delegate.fussyReminders[row].reminder.title
         
         return cell
     }

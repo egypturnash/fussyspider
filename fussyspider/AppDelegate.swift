@@ -18,13 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var fussyTags: [FussyTag] = []
     var tagFilter: [String] = []
    
-    let eventStore = EKEventStore()
     let locationManager = CLLocationManager()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
-        requestEventAccess()
+        requestEventAccess(authorized: {})
         loadAllFussyTags()
         let settings = UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil)
         application.registerUserNotificationSettings(settings)
@@ -107,21 +106,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         locationManager.startMonitoringForRegion(region)
         print("Registered region for \(tag.name)")
-    }
-    
-    //
-    // MARK: EventKit
-    //
-    /// Request access to entityType in .eventStore, defaults to EKReminder
-    func requestEventAccess(entityType: EKEntityType = .Reminder) {
-        eventStore.requestAccessToEntityType(entityType, completion:
-            {(granted, error) in
-                // Proper error handling eventually
-                if !granted {
-                    print("Access to Event Store not granted\n")
-                    print(error)
-                }
-        })
     }
     
     //
