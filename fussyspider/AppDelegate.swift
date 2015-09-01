@@ -25,9 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager.requestAlwaysAuthorization()
         requestEventAccess(authorized: {})
         loadAllFussyTags()
-        let settings = UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil)
-        application.registerUserNotificationSettings(settings)
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        requestNotificationAuthorization()
         return true
     }
 

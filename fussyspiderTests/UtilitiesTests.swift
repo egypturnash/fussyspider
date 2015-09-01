@@ -7,11 +7,12 @@
 //
 
 import XCTest
+import EventKit
 @testable import fussyspider
 
 class UtilitiesTests: XCTestCase {
     
-    let testDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+    let testDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     override func setUp() {
         super.setUp()
@@ -32,8 +33,21 @@ class UtilitiesTests: XCTestCase {
     func testFetchReminders() {
         let testTags = ["#test", "#two"]
         fetchReminders(testTags, completion: {
-            XCTAssertTrue(self.testDelegate?.fussyReminders.count > 0)
+            XCTAssertTrue(self.testDelegate.fussyReminders.count > 0)
         })        
     }
-
+    
+    func testRequestEventAccess() {
+        requestEventAccess(authorized: {
+                XCTAssertTrue(EKEventStore.authorizationStatusForEntityType(.Reminder) == .Authorized)
+        })
+    }
+    
+    func testCheckAuthorizationStatus() {
+        requestEventAccess(authorized: {
+            checkAuthorizationStatus(authorized: {
+                XCTAssertTrue(true)
+            })
+        })        
+    }
 }

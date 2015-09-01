@@ -91,3 +91,10 @@ func checkAuthorizationStatus(entityType: EKEntityType = .Reminder, authorized: 
         print("Permission Denied")
     }
 }
+
+func requestNotificationAuthorization() {
+    let application = UIApplication.sharedApplication()
+    let settings = UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil)
+    application.registerUserNotificationSettings(settings)
+    application.cancelAllLocalNotifications()
+}

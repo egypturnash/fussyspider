@@ -23,9 +23,5 @@ class AppDelegateTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testRequestEventAccess() {
-        testDelegate!.requestEventAccess()
-        //XCTAssertTrue(testDelegate!.eventStore!.authorizationStatusForEntityType(EKEntityType.Reminder) == EKAuthorizationStatus.Authorized)
-    }    
+       
 }
