@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Select Tags-->
@@ -196,12 +197,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Tag" id="5ZF-Er-afi">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dyk-QS-pzr">
-                            <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="rUW-Fm-Mt6" kind="show" id="HWn-mA-S5f"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem systemItem="cancel" id="dyk-QS-pzr">
+                                <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="rUW-Fm-Mt6" kind="show" id="HWn-mA-S5f"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Zoom" style="plain" id="Wt7-Yq-TBd">
+                                <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="zoomToUser:" destination="ccu-pQ-oAI" id="a8q-g5-SEX"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" tag="1" systemItem="save" id="jrO-Vm-5D4">
                             <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                             <connections>

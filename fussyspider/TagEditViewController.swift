@@ -18,13 +18,20 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     @IBOutlet weak var locationNameField: UITextField!
     @IBOutlet weak var onEntrySwitch: UISwitch!
     @IBOutlet weak var onExitSwitch: UISwitch!
-    @IBOutlet weak var radiusSlider: UISlider!    
+    @IBOutlet weak var radiusSlider: UISlider!
     @IBOutlet weak var mapView: MKMapView!
     
     @IBAction func locationFieldReturn(sender: AnyObject) {
         sender.resignFirstResponder()
         mapView.removeAnnotations(mapView.annotations)
         self.performSearch()
+    }
+    
+    @IBAction func zoomToUser(sender: AnyObject) {
+        if let coordinate = mapView.userLocation.location?.coordinate {
+            let region = MKCoordinateRegionMakeWithDistance(coordinate, 30000, 30000)
+            mapView.setRegion(region, animated: true)
+        }
     }
     
     override func viewDidLoad() {
