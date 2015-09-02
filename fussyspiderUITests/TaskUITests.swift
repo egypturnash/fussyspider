@@ -55,12 +55,11 @@ class TaskUITests: XCTestCase {
         XCTAssertTrue(app.textViews["Notes Field"].exists)        
     }
     
-    // Disabled until Apple fixes their bug(s) with UI tests and picker wheels
-    func testReminderPicker() {
-        //XCTAssertTrue(app.pickerWheels["Reminder Picker"].exists)
+    func testReminderField() {
+        XCTAssertTrue(app.textFields["Reminder Picker"].exists)        
     }
     
-    func testHiddenPicker() {
-        //XCTAssertTrue(app.pickerWheels["Hidden Picker"].exists)
+    func testHiddenField() {
+        XCTAssertTrue(app.textFields["Hidden Picker"].exists)
     }
 }

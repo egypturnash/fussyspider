@@ -36,7 +36,7 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        mapView.delegate = self
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
     }

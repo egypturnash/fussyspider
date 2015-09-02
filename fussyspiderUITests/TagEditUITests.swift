@@ -47,6 +47,10 @@ class fussyspiderTagEditUITests: XCTestCase {
         XCTAssertTrue(app.navigationBars["fussyspider"].exists)
     }
     
+    func testZoomButton() {
+        XCTAssertTrue(app.navigationBars["Edit Tag"].buttons["Zoom"].exists)       
+    }
+    
     func testCancelButton() {
         XCTAssertTrue(app.navigationBars["Edit Tag"].buttons["Cancel"].exists)
         app.navigationBars["Edit Tag"].buttons["Cancel"].tap()
