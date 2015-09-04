@@ -13,7 +13,6 @@
 		C845590D1B6FF52900C839D9 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C845590C1B6FF52900C839D9 /* AppDelegateTests.swift */; };
 		C84559181B6FF52900C839D9 /* MainViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559171B6FF52900C839D9 /* MainViewUITests.swift */; };
 		C845592C1B7008FC00C839D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559251B7008FC00C839D9 /* Main.storyboard */; };
-		C845592D1B7008FC00C839D9 /* TaskTagListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559261B7008FC00C839D9 /* TaskTagListTableViewController.swift */; };
 		C845592E1B7008FC00C839D9 /* TagEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559271B7008FC00C839D9 /* TagEditViewController.swift */; };
 		C845592F1B7008FC00C839D9 /* TagSelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559281B7008FC00C839D9 /* TagSelectTableViewController.swift */; };
 		C84559301B7008FC00C839D9 /* TaskEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559291B7008FC00C839D9 /* TaskEditViewController.swift */; };
@@ -22,6 +21,10 @@
 		C84559341B700DFC00C839D9 /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559331B700DFC00C839D9 /* Task.storyboard */; };
 		C84559361B700EC600C839D9 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559351B700EC600C839D9 /* Preferences.storyboard */; };
 		C879447A1B709BCD0004A89B /* Tags.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C87944791B709BCD0004A89B /* Tags.storyboard */; };
+		C898780F1B98D7EE00110BB7 /* FSTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C898780E1B98D7EE00110BB7 /* FSTag.swift */; };
+		C8DBB9271B990B1700FBE929 /* FSTagStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DBB9261B990B1700FBE929 /* FSTagStore.swift */; };
+		C8DBB9291B9910BE00FBE929 /* FSTaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DBB9281B9910BE00FBE929 /* FSTaskStore.swift */; };
+		C8DBB92B1B9911B900FBE929 /* FSTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DBB92A1B9911B900FBE929 /* FSTask.swift */; };
 		C8DC47F81B85793500C51D35 /* FussyReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC47F71B85793500C51D35 /* FussyReminder.swift */; };
 		C8DC47FF1B868F8D00C51D35 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DC47FE1B868F8D00C51D35 /* MapKit.framework */; };
 		C8DC48031B86AE0F00C51D35 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC48021B86AE0F00C51D35 /* Utilities.swift */; };
@@ -64,7 +67,6 @@
 		C84559171B6FF52900C839D9 /* MainViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewUITests.swift; sourceTree = "<group>"; };
 		C84559191B6FF52900C839D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C84559251B7008FC00C839D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		C84559261B7008FC00C839D9 /* TaskTagListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTagListTableViewController.swift; sourceTree = "<group>"; };
 		C84559271B7008FC00C839D9 /* TagEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagEditViewController.swift; sourceTree = "<group>"; };
 		C84559281B7008FC00C839D9 /* TagSelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSelectTableViewController.swift; sourceTree = "<group>"; };
 		C84559291B7008FC00C839D9 /* TaskEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskEditViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,10 @@
 		C84559331B700DFC00C839D9 /* Task.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		C84559351B700EC600C839D9 /* Preferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		C87944791B709BCD0004A89B /* Tags.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tags.storyboard; sourceTree = "<group>"; };
+		C898780E1B98D7EE00110BB7 /* FSTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTag.swift; sourceTree = "<group>"; };
+		C8DBB9261B990B1700FBE929 /* FSTagStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTagStore.swift; sourceTree = "<group>"; };
+		C8DBB9281B9910BE00FBE929 /* FSTaskStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTaskStore.swift; sourceTree = "<group>"; };
+		C8DBB92A1B9911B900FBE929 /* FSTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTask.swift; sourceTree = "<group>"; };
 		C8DC47F71B85793500C51D35 /* FussyReminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FussyReminder.swift; sourceTree = "<group>"; };
 		C8DC47FB1B86732200C51D35 /* fussyspider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = fussyspider.entitlements; sourceTree = "<group>"; };
 		C8DC47FE1B868F8D00C51D35 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -136,6 +142,9 @@
 		C84558F61B6FF52900C839D9 /* fussyspider */ = {
 			isa = PBXGroup;
 			children = (
+				C89878101B98E3B400110BB7 /* Model */,
+				C89878121B98E3D800110BB7 /* Controller */,
+				C89878111B98E3C800110BB7 /* View */,
 				C8DC47FB1B86732200C51D35 /* fussyspider.entitlements */,
 				C84558F71B6FF52900C839D9 /* AppDelegate.swift */,
 				C8DC47F71B85793500C51D35 /* FussyReminder.swift */,
@@ -146,7 +155,6 @@
 				C84559351B700EC600C839D9 /* Preferences.storyboard */,
 				C84559331B700DFC00C839D9 /* Task.storyboard */,
 				C87944791B709BCD0004A89B /* Tags.storyboard */,
-				C84559261B7008FC00C839D9 /* TaskTagListTableViewController.swift */,
 				C84559271B7008FC00C839D9 /* TagEditViewController.swift */,
 				C84559281B7008FC00C839D9 /* TagSelectTableViewController.swift */,
 				C84559291B7008FC00C839D9 /* TaskEditViewController.swift */,
@@ -180,6 +188,31 @@
 				C8358B291B81759F00DE5F2F /* TagEditUITests.swift */,
 			);
 			path = fussyspiderUITests;
+			sourceTree = "<group>";
+		};
+		C89878101B98E3B400110BB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C898780E1B98D7EE00110BB7 /* FSTag.swift */,
+				C8DBB9261B990B1700FBE929 /* FSTagStore.swift */,
+				C8DBB92A1B9911B900FBE929 /* FSTask.swift */,
+				C8DBB9281B9910BE00FBE929 /* FSTaskStore.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C89878111B98E3C800110BB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C89878121B98E3D800110BB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +357,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8DBB9271B990B1700FBE929 /* FSTagStore.swift in Sources */,
+				C8DBB9291B9910BE00FBE929 /* FSTaskStore.swift in Sources */,
 				C84559311B7008FC00C839D9 /* MainViewController.swift in Sources */,
 				C8DC48051B86B17B00C51D35 /* FussyTag.swift in Sources */,
 				C845592F1B7008FC00C839D9 /* TagSelectTableViewController.swift in Sources */,
@@ -332,8 +367,9 @@
 				C84558F81B6FF52900C839D9 /* AppDelegate.swift in Sources */,
 				C84559301B7008FC00C839D9 /* TaskEditViewController.swift in Sources */,
 				C8DC48031B86AE0F00C51D35 /* Utilities.swift in Sources */,
-				C845592D1B7008FC00C839D9 /* TaskTagListTableViewController.swift in Sources */,
+				C898780F1B98D7EE00110BB7 /* FSTag.swift in Sources */,
 				C845592E1B7008FC00C839D9 /* TagEditViewController.swift in Sources */,
+				C8DBB92B1B9911B900FBE929 /* FSTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
