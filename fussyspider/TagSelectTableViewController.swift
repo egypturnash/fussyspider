@@ -9,125 +9,139 @@
 import UIKit
 
 class TagSelectTableViewController: UITableViewController {
+  
+  let taskFilter = FSTaskFilter.sharedInstance
+  let tagStore = FSTagStore.sharedInstance
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    // Uncomment the following line to preserve selection between presentations
+    // self.clearsSelectionOnViewWillAppear = false
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return delegate.fussyTags.count + 1
-    }
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
+  // MARK: UITableViewDataSource protocol functions
+  
+  // required
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return tagStore.count + 1
+  }
+  
+  // required
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("tagRow", forIndexPath: indexPath)
+    let row = indexPath.row
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("tagRow", forIndexPath: indexPath)
-        let row = indexPath.row
-        
-        if row == 0 {
-            cell.textLabel!.text = "Toggle All"
+    if row == 0 {
+      cell.textLabel!.text = "Show All"
+      if taskFilter.showAll {
+        cell.accessoryType = .Checkmark
+      }
+    } else {
+      if let tag = tagStore.getTagAtIndex(row-1) {
+        let taskFilter = FSTaskFilter.sharedInstance
+        if taskFilter.tags.contains(tag) {
+          cell.accessoryType = .Checkmark
+        }
+        cell.textLabel!.text = tag.title
+      }
+    }
+    return cell
+  }
+  
+  // MARK: UITableViewDelegate protocol functions
+  
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    toggleCell(tableView, indexPath: indexPath)
+  }
+  
+  func toggleCell(tableView: UITableView, indexPath: NSIndexPath) {
+    if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+      // SELECT ALL
+      if indexPath.row == 0 {
+        if taskFilter.showAll {
+          taskFilter.showAll = false
+          cell.accessoryType = .None
         } else {
-            let tagName = delegate.fussyTags[row-1].name
-            let tagFilter = delegate.tagFilter
-            
-            if tagFilter.contains(tagName) {
-                cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-            }
-            cell.textLabel!.text = delegate.fussyTags[row-1].name
+          clearCheckmarks()
+          taskFilter.showAll = true
+          cell.accessoryType = .Checkmark
         }
-        return cell
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        toggleCell(tableView, indexPath: indexPath)
-    }
-    
-    func toggleCell(tableView: UITableView, indexPath: NSIndexPath) {
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-            let tagName = cell.textLabel!.text!
-            var tagFilter = delegate.tagFilter
-            
-            // SELECT ALL
-            if indexPath.row == 0 {
-                tagFilter = []
-                for index in 1...(tableView.numberOfRowsInSection(0)) {
-                    toggleCell(tableView, indexPath: NSIndexPath(forRow: index, inSection: 0))
-                }
-                return
-            }
-            
-            if !tagFilter.contains(tagName) {
-                tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.Checkmark
-                tagFilter.append(tagName)
-            } else {
-                tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.None
-                tagFilter.removeAtIndex(tagFilter.indexOf(tagName)!)
-            }
-            
-            delegate.tagFilter = tagFilter
+        return
+      }
+      if let tag = tagStore.getTagWithTitle(cell.textLabel!.text!) {
+        if taskFilter.showAll {
+          toggleCell(tableView, indexPath: NSIndexPath(forRow: 0, inSection: 0))
         }
-    }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Save selected
-        if sender!.tag == 1 {
-            // TODO Look at selected rows and update appDelegate
+        if !taskFilter.tags.contains(tag) {
+          cell.accessoryType = .Checkmark
+          taskFilter.tags.append(tag)
+        } else {
+          cell.accessoryType = .None
+          taskFilter.tags.removeAtIndex(taskFilter.tags.indexOf(tag)!)
         }
+      }
     }
+  }
+  
+  func clearCheckmarks () {
+    for filterTag in taskFilter.tags {
+      if let tag = tagStore.getTagWithTitle(filterTag.title!) {
+        if let row = tagStore.getIndexOfTag(tag) {
+          toggleCell(tableView, indexPath: NSIndexPath(forRow: row+1, inSection: 0))
+        }
+      }
+    }
+  }
+  
+  /*
+  // Override to support conditional editing of the table view.
+  override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+  // Return NO if you do not want the specified item to be editable.
+  return true
+  }
+  */
+  
+  /*
+  // Override to support editing the table view.
+  override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+  if editingStyle == .Delete {
+  // Delete the row from the data source
+  tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+  } else if editingStyle == .Insert {
+  // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+  }
+  }
+  */
+  
+  /*
+  // Override to support rearranging the table view.
+  override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+  
+  }
+  */
+  
+  /*
+  // Override to support conditional rearranging of the table view.
+  override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+  // Return NO if you do not want the item to be re-orderable.
+  return true
+  }
+  */
+  
+  // MARK: - Navigation
+  /*
+  // In a storyboard-based application, you will often want to do a little preparation before navigation
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+ 
+  }
+  */
 }

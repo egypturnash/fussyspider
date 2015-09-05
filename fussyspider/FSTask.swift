@@ -9,11 +9,12 @@
 import UIKit
 import EventKit
 
-class FSTask: EKReminder {
-    var tags: [FSTag]!
-    
-    init(task: EKReminder) {
-        super.init()
-        self.tags = extractTags(task.title)
-    }
+class FSTask: NSObject {
+  var tags: [FSTag]!
+  var task: EKReminder
+  
+  init(task: EKReminder) {
+    self.task = task
+    self.tags = FSTagStore.sharedInstance.extractTagsFromTitle(task.title)
+  }
 }

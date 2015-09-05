@@ -23,19 +23,6 @@ class UtilitiesTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-
-    func testExtractTags() {
-        let testInput = "hi #this should h#ve only #two hashtags#"
-        let testResult = ["this", "two"]
-        XCTAssertEqual(extractTags(testInput), testResult)
-    }
-
-    func testFetchReminders() {
-        let testTags = ["#test", "#two"]
-        fetchReminders(testTags, completion: {
-            XCTAssertTrue(self.testDelegate.fussyReminders.count > 0)
-        })        
-    }
     
     func testRequestEventAccess() {
         requestEventAccess(authorized: {

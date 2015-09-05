@@ -10,7 +10,6 @@
 		C8358B2A1B81759F00DE5F2F /* TagEditUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8358B291B81759F00DE5F2F /* TagEditUITests.swift */; };
 		C84558F81B6FF52900C839D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84558F71B6FF52900C839D9 /* AppDelegate.swift */; };
 		C84558FF1B6FF52900C839D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84558FE1B6FF52900C839D9 /* Assets.xcassets */; };
-		C845590D1B6FF52900C839D9 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C845590C1B6FF52900C839D9 /* AppDelegateTests.swift */; };
 		C84559181B6FF52900C839D9 /* MainViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559171B6FF52900C839D9 /* MainViewUITests.swift */; };
 		C845592C1B7008FC00C839D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84559251B7008FC00C839D9 /* Main.storyboard */; };
 		C845592E1B7008FC00C839D9 /* TagEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84559271B7008FC00C839D9 /* TagEditViewController.swift */; };
@@ -25,10 +24,10 @@
 		C8DBB9271B990B1700FBE929 /* FSTagStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DBB9261B990B1700FBE929 /* FSTagStore.swift */; };
 		C8DBB9291B9910BE00FBE929 /* FSTaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DBB9281B9910BE00FBE929 /* FSTaskStore.swift */; };
 		C8DBB92B1B9911B900FBE929 /* FSTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DBB92A1B9911B900FBE929 /* FSTask.swift */; };
-		C8DC47F81B85793500C51D35 /* FussyReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC47F71B85793500C51D35 /* FussyReminder.swift */; };
+		C8DBB92D1B9A0FE200FBE929 /* FSAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DBB92C1B9A0FE200FBE929 /* FSAlertController.swift */; };
+		C8DBB9301B9A2AC800FBE929 /* FSTaskFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DBB92F1B9A2AC800FBE929 /* FSTaskFilter.swift */; };
 		C8DC47FF1B868F8D00C51D35 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DC47FE1B868F8D00C51D35 /* MapKit.framework */; };
 		C8DC48031B86AE0F00C51D35 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC48021B86AE0F00C51D35 /* Utilities.swift */; };
-		C8DC48051B86B17B00C51D35 /* FussyTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC48041B86B17B00C51D35 /* FussyTag.swift */; };
 		C8DC48071B86B3AF00C51D35 /* UtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC48061B86B3AF00C51D35 /* UtilitiesTests.swift */; };
 		C8E8A09A1B814D32006CBB65 /* Kalinda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E8A0991B814D32006CBB65 /* Kalinda.storyboard */; };
 		C8E8A09E1B8154E3006CBB65 /* PreferencesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E8A09D1B8154E3006CBB65 /* PreferencesUITests.swift */; };
@@ -61,7 +60,6 @@
 		C84558FE1B6FF52900C839D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C84559031B6FF52900C839D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C84559081B6FF52900C839D9 /* fussyspiderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fussyspiderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C845590C1B6FF52900C839D9 /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
 		C845590E1B6FF52900C839D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C84559131B6FF52900C839D9 /* fussyspiderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fussyspiderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84559171B6FF52900C839D9 /* MainViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewUITests.swift; sourceTree = "<group>"; };
@@ -79,11 +77,11 @@
 		C8DBB9261B990B1700FBE929 /* FSTagStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTagStore.swift; sourceTree = "<group>"; };
 		C8DBB9281B9910BE00FBE929 /* FSTaskStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTaskStore.swift; sourceTree = "<group>"; };
 		C8DBB92A1B9911B900FBE929 /* FSTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTask.swift; sourceTree = "<group>"; };
-		C8DC47F71B85793500C51D35 /* FussyReminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FussyReminder.swift; sourceTree = "<group>"; };
+		C8DBB92C1B9A0FE200FBE929 /* FSAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSAlertController.swift; sourceTree = "<group>"; };
+		C8DBB92F1B9A2AC800FBE929 /* FSTaskFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTaskFilter.swift; sourceTree = "<group>"; };
 		C8DC47FB1B86732200C51D35 /* fussyspider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = fussyspider.entitlements; sourceTree = "<group>"; };
 		C8DC47FE1B868F8D00C51D35 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C8DC48021B86AE0F00C51D35 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		C8DC48041B86B17B00C51D35 /* FussyTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FussyTag.swift; sourceTree = "<group>"; };
 		C8DC48061B86B3AF00C51D35 /* UtilitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilitiesTests.swift; sourceTree = "<group>"; };
 		C8E8A0991B814D32006CBB65 /* Kalinda.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Kalinda.storyboard; sourceTree = "<group>"; };
 		C8E8A09D1B8154E3006CBB65 /* PreferencesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesUITests.swift; sourceTree = "<group>"; };
@@ -142,24 +140,13 @@
 		C84558F61B6FF52900C839D9 /* fussyspider */ = {
 			isa = PBXGroup;
 			children = (
+				C8DBB92E1B9A22C700FBE929 /* Storyboards */,
 				C89878101B98E3B400110BB7 /* Model */,
 				C89878121B98E3D800110BB7 /* Controller */,
 				C89878111B98E3C800110BB7 /* View */,
 				C8DC47FB1B86732200C51D35 /* fussyspider.entitlements */,
 				C84558F71B6FF52900C839D9 /* AppDelegate.swift */,
-				C8DC47F71B85793500C51D35 /* FussyReminder.swift */,
-				C8DC48041B86B17B00C51D35 /* FussyTag.swift */,
 				C8DC48021B86AE0F00C51D35 /* Utilities.swift */,
-				C84559251B7008FC00C839D9 /* Main.storyboard */,
-				C8E8A0991B814D32006CBB65 /* Kalinda.storyboard */,
-				C84559351B700EC600C839D9 /* Preferences.storyboard */,
-				C84559331B700DFC00C839D9 /* Task.storyboard */,
-				C87944791B709BCD0004A89B /* Tags.storyboard */,
-				C84559271B7008FC00C839D9 /* TagEditViewController.swift */,
-				C84559281B7008FC00C839D9 /* TagSelectTableViewController.swift */,
-				C84559291B7008FC00C839D9 /* TaskEditViewController.swift */,
-				C845592A1B7008FC00C839D9 /* MainViewController.swift */,
-				C845592B1B7008FC00C839D9 /* PrefsViewController.swift */,
 				C84558FE1B6FF52900C839D9 /* Assets.xcassets */,
 				C84559031B6FF52900C839D9 /* Info.plist */,
 			);
@@ -169,7 +156,6 @@
 		C845590B1B6FF52900C839D9 /* fussyspiderTests */ = {
 			isa = PBXGroup;
 			children = (
-				C845590C1B6FF52900C839D9 /* AppDelegateTests.swift */,
 				C845590E1B6FF52900C839D9 /* Info.plist */,
 				C8DC48061B86B3AF00C51D35 /* UtilitiesTests.swift */,
 			);
@@ -197,6 +183,7 @@
 				C8DBB9261B990B1700FBE929 /* FSTagStore.swift */,
 				C8DBB92A1B9911B900FBE929 /* FSTask.swift */,
 				C8DBB9281B9910BE00FBE929 /* FSTaskStore.swift */,
+				C8DBB92F1B9A2AC800FBE929 /* FSTaskFilter.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -211,8 +198,26 @@
 		C89878121B98E3D800110BB7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C84559271B7008FC00C839D9 /* TagEditViewController.swift */,
+				C84559281B7008FC00C839D9 /* TagSelectTableViewController.swift */,
+				C84559291B7008FC00C839D9 /* TaskEditViewController.swift */,
+				C845592A1B7008FC00C839D9 /* MainViewController.swift */,
+				C845592B1B7008FC00C839D9 /* PrefsViewController.swift */,
+				C8DBB92C1B9A0FE200FBE929 /* FSAlertController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		C8DBB92E1B9A22C700FBE929 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C84559251B7008FC00C839D9 /* Main.storyboard */,
+				C8E8A0991B814D32006CBB65 /* Kalinda.storyboard */,
+				C84559351B700EC600C839D9 /* Preferences.storyboard */,
+				C84559331B700DFC00C839D9 /* Task.storyboard */,
+				C87944791B709BCD0004A89B /* Tags.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,16 +365,16 @@
 				C8DBB9271B990B1700FBE929 /* FSTagStore.swift in Sources */,
 				C8DBB9291B9910BE00FBE929 /* FSTaskStore.swift in Sources */,
 				C84559311B7008FC00C839D9 /* MainViewController.swift in Sources */,
-				C8DC48051B86B17B00C51D35 /* FussyTag.swift in Sources */,
 				C845592F1B7008FC00C839D9 /* TagSelectTableViewController.swift in Sources */,
-				C8DC47F81B85793500C51D35 /* FussyReminder.swift in Sources */,
 				C84559321B7008FC00C839D9 /* PrefsViewController.swift in Sources */,
 				C84558F81B6FF52900C839D9 /* AppDelegate.swift in Sources */,
 				C84559301B7008FC00C839D9 /* TaskEditViewController.swift in Sources */,
+				C8DBB9301B9A2AC800FBE929 /* FSTaskFilter.swift in Sources */,
 				C8DC48031B86AE0F00C51D35 /* Utilities.swift in Sources */,
 				C898780F1B98D7EE00110BB7 /* FSTag.swift in Sources */,
 				C845592E1B7008FC00C839D9 /* TagEditViewController.swift in Sources */,
 				C8DBB92B1B9911B900FBE929 /* FSTask.swift in Sources */,
+				C8DBB92D1B9A0FE200FBE929 /* FSAlertController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +382,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C845590D1B6FF52900C839D9 /* AppDelegateTests.swift in Sources */,
 				C8DC48071B86B3AF00C51D35 /* UtilitiesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

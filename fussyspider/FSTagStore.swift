@@ -10,84 +10,110 @@ import EventKit
 
 let FSTagStoreKey = "tagstore"
 
-class FSTagStore: NSObject, NSCoding {
-    private var tagStore: [FSTag]
-    
-    static let sharedInstance = FSTagStore()
-    
-    override init() {
-        tagStore = []
+class FSTagStore: NSObject {
+  private var tagStore: [FSTag] = []
+  var finishedLoading : Bool!
+  var count: Int { return tagStore.count }
+  
+  static let sharedInstance = FSTagStore()
+  
+  override init() {
+    super.init()
+    loadAllTags()
+  }
+  
+  func addTag(tag: FSTag) {
+    if let title = tag.title {
+      if let foundTag = getTagWithTitle(title) {
+        tagStore.removeAtIndex(tagStore.indexOf(foundTag)!)
+      }
+      tagStore.append(tag)
+      saveAllTags()
     }
+  }
+  
+  func removeTagWithTitle(title: String) {
+    if let deletedTag = getTagWithTitle(title) {
+      tagStore.removeAtIndex(tagStore.indexOf(deletedTag)!)
+      saveAllTags()
+    }
+  }
+  
+  func getTagWithTitle(title: String) -> FSTag? {
+    for tag in tagStore {
+      if tag.title == title {
+        return tag
+      }
+    }
+    return nil
+  }
+  
+  func getTagAtIndex(row: Int) -> FSTag? {
+    if row < tagStore.count {
+      return tagStore[row]
+    }
+    return nil
+  }
+  
+  func getAllTags() -> [FSTag] {
+    var result : [FSTag]
+    result = []
+    for tag in tagStore {
+      result.append(tag)
+    }
+    return result
+  }
+  
+  func getIndexOfTag(tag: FSTag) -> Int! {
+    return tagStore.indexOf(tag)
+  }
+  
+  func extractTagsFromTitle(title: String) -> [FSTag] {
+    while !finishedLoading {}
+    var result : [FSTag] = []
     
-    func addTag(tag: FSTag) {
-        if let title = tag.title {
-            if getTagWithTitle(title) == nil {
-                tagStore.append(tag)
-            }
+    let words = title.componentsSeparatedByString(" ")
+    for var word in words {
+      if word != "" {
+        let firstChar = word.substringToIndex(advance(word.startIndex, 1))
+        if firstChar == "#" {
+          word.removeAtIndex(word.startIndex)
+          if let tag = getTagWithTitle(word) {
+            result.append(tag)
+          } else {
+            let tag = FSTag(title: word,
+              coordinate: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0))
+            result.append(tag)
+            addTag(tag)
+          }
         }
+      }
     }
-    
-    func removeTagWithTitle(title: String) {
-        if let deletedTag = getTagWithTitle(title) {
-            tagStore.removeAtIndex(tagStore.indexOf(deletedTag)!)
+    return result
+  }
+  
+  func loadAllTags() {
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    tagStore = []
+    finishedLoading = false
+    if let tags = userDefaults.arrayForKey(FSTagStoreKey)
+    {
+      for tag in tags {
+        if let currentTag = NSKeyedUnarchiver.unarchiveObjectWithData(tag as! NSData) as? FSTag {
+          tagStore.append(currentTag)
         }
+      }
     }
-    
-    func getTagWithTitle(title: String) -> FSTag! {
-        for tag in tagStore {
-            if tag.title == title {
-                return tag
-            }
-        }
-        return nil
+    finishedLoading = true
+  }
+  
+  func saveAllTags() {
+    let tags = NSMutableArray()
+    for currentTag in tagStore {
+      let tag = NSKeyedArchiver.archivedDataWithRootObject(currentTag)
+      tags.addObject(tag)
     }
-    
-    func extractTagsFromTitle(title: String) -> [FSTag] {
-        var result : [FSTag] = []
-        
-        let words = title.componentsSeparatedByString(" ")
-        for var word in words {
-            if word != "" {
-                let firstChar = word.substringToIndex(advance(word.startIndex, 1))
-                if firstChar == "#" {
-                    word.removeAtIndex(word.startIndex)
-                    if let tag = getTagWithTitle(word) {
-                        result.append(tag)
-                    } else {
-                        let tag = FSTag(title: word,
-                            coordinate: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0))
-                        result.append(tag)
-                        addTag(tag)
-                    }
-                }
-            }
-        }
-        return result
-    }
-    
-    // MARK: NSCoding
-    
-    required init?(coder decoder: NSCoder) {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        tagStore = []
-        
-        if let tags = userDefaults.arrayForKey(FSTagStoreKey)
-        {
-            for tag in tags {
-                if let currentTag = NSKeyedUnarchiver.unarchiveObjectWithData(tag as! NSData) as? FSTag {
-                    tagStore.append(currentTag)
-                }
-            }
-        }
-    }
-    
-    func encodeWithCoder(encoder: NSCoder) {
-        let tags = NSMutableArray()
-        for currentTag in tagStore {
-            let tag = NSKeyedArchiver.archivedDataWithRootObject(currentTag)
-            tags.addObject(tag)
-        }
-        NSUserDefaults.standardUserDefaults().setObject(tags, forKey: FSTagStoreKey)
-        NSUserDefaults.standardUserDefaults().synchronize()
-    }
+    NSUserDefaults.standardUserDefaults().setObject(tags, forKey: FSTagStoreKey)
+    NSUserDefaults.standardUserDefaults().synchronize()
+  }
 }

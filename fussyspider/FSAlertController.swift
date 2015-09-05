@@ -1,25 +1,25 @@
 //
-//  PrefsViewController.swift
-//  fussymouse
+//  FSAlertController.swift
+//  fussyspider
 //
-//  Created by Evan Ostroski on 7/19/15.
-//  Copyright (c) 2015 Evan Ostroski. All rights reserved.
+//  Created by Evan Ostroski on 9/4/15.
+//  Copyright © 2015 Egypt Urnash. All rights reserved.
 //
 
 import UIKit
 
-class PrefsViewController: UIViewController {
-  
-  let taskFilter = FSTaskFilter.sharedInstance
+class FSAlertController: UIAlertController {
 
-  @IBOutlet weak var showCompletedSwitch: UISwitch!
-  
-  @IBAction func showCompletedValueChange(sender: AnyObject) {
-    taskFilter.showCompleted = showCompletedSwitch.on
-  }
+    override func viewWillAppear(animated: Bool) {
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (action) -> Void in
+            print("Alert closed")
+        }
+        self.addAction(okAction)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        showCompletedSwitch.setOn(taskFilter.showCompleted, animated: false)
+
         // Do any additional setup after loading the view.
     }
 
@@ -27,7 +27,12 @@ class PrefsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-  
+    
+    func simpleAlert() {
+        
+    }
+    
+
     /*
     // MARK: - Navigation
 
@@ -37,4 +42,5 @@ class PrefsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 }
