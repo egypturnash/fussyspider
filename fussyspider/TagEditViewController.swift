@@ -110,7 +110,12 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
       if slicedInputArray[0] == "" {
         return nil
       }
-      return slicedInputArray[0]
+      var trimTitle = slicedInputArray[0]
+      let firstChar = trimTitle.substringToIndex(advance(trimTitle.startIndex, 1))
+      if firstChar == "#" {
+        trimTitle.removeAtIndex(trimTitle.startIndex)
+      }
+      return trimTitle
     }
     return nil
   }
