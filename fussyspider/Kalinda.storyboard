@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fhK-UA-hY4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fhK-UA-hY4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,11 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="faf-MB-Ffp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kalinda" translatesAutoresizingMaskIntoConstraints="NO" id="faf-MB-Ffp">
                                 <rect key="frame" x="20" y="72" width="560" height="528"/>
+                                <color key="backgroundColor" red="0.29172585229999998" green="0.0" blue="0.25832373990000002" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.29172585229999998" green="0.0" blue="0.25832373990000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="f4K-fM-Z9h" firstAttribute="top" secondItem="faf-MB-Ffp" secondAttribute="bottom" id="AE1-aZ-F20"/>
                             <constraint firstItem="faf-MB-Ffp" firstAttribute="leading" secondItem="g9c-cp-SM7" secondAttribute="leadingMargin" id="Cd7-Zl-4Q8"/>
@@ -31,6 +32,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Kalinda" id="9hX-bc-CUV">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="a8C-AW-3gx">
+                            <color key="tintColor" red="0.29172585229999998" green="0.0" blue="0.25832373990000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="8m0-XW-q5G" kind="show" id="tUl-6L-IpI"/>
                             </connections>
@@ -68,4 +70,7 @@
             <point key="canvasLocation" x="450" y="427"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="kalinda" width="320" height="568"/>
+    </resources>
 </document>

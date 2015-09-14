@@ -53,6 +53,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let cell = tableView.dequeueReusableCellWithIdentifier("taskRow", forIndexPath: indexPath)
     let row = indexPath.row
     cell.textLabel!.text = tasks[row].task.title
+    cell.textLabel!.textColor! = .lightTextColor()
     return cell
   }
 }

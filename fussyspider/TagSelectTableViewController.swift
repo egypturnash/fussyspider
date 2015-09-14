@@ -55,6 +55,7 @@ class TagSelectTableViewController: UITableViewController {
         cell.textLabel!.text = tag.title
       }
     }
+    cell.textLabel!.textColor! = .lightTextColor()
     return cell
   }
   

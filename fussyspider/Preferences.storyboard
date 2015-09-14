@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="L3U-0w-qX2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="L3U-0w-qX2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -73,8 +73,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AfF-Xf-B3I">
-                                <rect key="frame" x="64" y="294" width="473" height="162"/>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AfF-Xf-B3I">
+                                <rect key="frame" x="64" y="294" width="473" height="88"/>
                                 <accessibility key="accessibilityConfiguration" label="Theme selector"/>
                             </pickerView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lyJ-Wh-fuG">
@@ -93,7 +93,7 @@
                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </slider>
                         </subviews>
-                        <color key="backgroundColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.29172585229999998" green="0.0" blue="0.25832373990000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="op6-W7-Avk" firstAttribute="leading" secondItem="zl4-pT-5Al" secondAttribute="leading" id="1i4-jv-2L9"/>
                             <constraint firstItem="349-5U-kc1" firstAttribute="trailing" secondItem="kKw-hM-3Hi" secondAttribute="trailing" id="5qp-CR-69H"/>
@@ -102,7 +102,6 @@
                             <constraint firstItem="ACK-Mj-uqw" firstAttribute="leading" secondItem="zl4-pT-5Al" secondAttribute="leading" id="AkE-gs-hRA"/>
                             <constraint firstItem="ACK-Mj-uqw" firstAttribute="top" secondItem="zl4-pT-5Al" secondAttribute="bottom" constant="30" id="BGl-tu-cYa"/>
                             <constraint firstItem="ACK-Mj-uqw" firstAttribute="trailing" secondItem="zl4-pT-5Al" secondAttribute="trailing" id="HEA-iX-g0X"/>
-                            <constraint firstItem="l0t-M9-PvT" firstAttribute="top" secondItem="AfF-Xf-B3I" secondAttribute="bottom" constant="144" id="Jmj-gr-8gr"/>
                             <constraint firstItem="kKw-hM-3Hi" firstAttribute="top" secondItem="66G-Rx-xNd" secondAttribute="bottom" constant="54" id="Ng5-5H-BOI"/>
                             <constraint firstItem="AfF-Xf-B3I" firstAttribute="top" secondItem="KGQ-5E-BxN" secondAttribute="bottom" constant="19" id="Ome-ee-j1F"/>
                             <constraint firstItem="lyJ-Wh-fuG" firstAttribute="centerY" secondItem="op6-W7-Avk" secondAttribute="centerY" id="Pm8-vG-0Ev"/>
@@ -123,7 +122,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Preferences" id="ss8-Kt-khU">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="1Z1-zk-le4">
-                            <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.29172585229999998" green="0.0" blue="0.25832373990000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="oeK-NR-FrE" kind="show" id="9Zd-Mc-m3k"/>
                             </connections>
