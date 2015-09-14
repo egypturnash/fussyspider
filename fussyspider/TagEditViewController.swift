@@ -111,7 +111,7 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         return nil
       }
       var trimTitle = slicedInputArray[0]
-      let firstChar = trimTitle.substringToIndex(advance(trimTitle.startIndex, 1))
+      let firstChar = trimTitle.substringToIndex(trimTitle.startIndex.advancedBy(1))
       if firstChar == "#" {
         trimTitle.removeAtIndex(trimTitle.startIndex)
       }

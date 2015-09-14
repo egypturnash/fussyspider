@@ -75,7 +75,7 @@ class FSTagStore: NSObject {
     let words = title.componentsSeparatedByString(" ")
     for var word in words {
       if word != "" {
-        let firstChar = word.substringToIndex(advance(word.startIndex, 1))
+        let firstChar = word.substringToIndex(word.startIndex.advancedBy(1))
         if firstChar == "#" {
           word.removeAtIndex(word.startIndex)
           if let tag = getTagWithTitle(word) {
