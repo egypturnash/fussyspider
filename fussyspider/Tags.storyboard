@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.29172585229999998" green="0.0" blue="0.25832373990000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                        <color key="sectionIndexColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <color key="sectionIndexColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.29172585229999998" green="0.0" blue="0.25832373990000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tagRow" id="KrX-CZ-9Eg">
@@ -27,7 +27,7 @@
                                     <color key="backgroundColor" red="0.29172585229999998" green="0.0" blue="0.25832373990000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.29172585229999998" green="0.0" blue="0.25832373990000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -144,7 +144,7 @@
                                     <constraint firstAttribute="width" constant="64" id="ZOQ-2E-WAr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="29" y="71" width="59" height="26"/>

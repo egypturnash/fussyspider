@@ -9,9 +9,15 @@ import UIKit
 import CoreLocation
 import MapKit
 
+protocol TagEditViewControllerDelegate {
+  func tagEditViewController(controller: TagEditViewController, editTag _: String?)
+}
+
 class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
   
   var matchingItems: [MKMapItem] = [MKMapItem]()
+  var delegate: TagEditViewControllerDelegate?
+  
   let locationManager = CLLocationManager()
   let tagStore = FSTagStore()
   
@@ -42,6 +48,19 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     locationManager.requestAlwaysAuthorization()
   }
   
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    if let _delegate = self.delegate {
+      _delegate.tagEditViewController(self, editTag: nil)
+    }
+  }
+  
+  override func viewWillDisappear(animated: Bool) {
+    mapView.delegate = nil
+    mapView = nil
+    super.viewWillDisappear(animated)
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
@@ -68,6 +87,9 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         let alert = FSAlertController(title: "Warning", message: "No tag name entered.", preferredStyle: UIAlertControllerStyle.Alert)
         self.presentViewController(alert, animated: true, completion: nil)
       }
+    }
+    if let presenting = self.presentingViewController {
+      presenting.dismissViewControllerAnimated(true, completion: nil)
     }
   }
   

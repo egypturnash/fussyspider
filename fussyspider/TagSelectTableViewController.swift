@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import MapKit
 
-class TagSelectTableViewController: UITableViewController {
+class TagSelectTableViewController: UITableViewController, TagEditViewControllerDelegate {
   
   let taskFilter = FSTaskFilter.sharedInstance
   let tagStore = FSTagStore.sharedInstance
+  
+  var tagToEdit : FSTag?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,6 +30,21 @@ class TagSelectTableViewController: UITableViewController {
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  // MARK: TagEditViewControllerDelegate
+  func tagEditViewController(controller: TagEditViewController, editTag _: String?) {
+    if let tag = tagToEdit {
+      controller.tagNameField.text = tag.title
+      controller.tagNameField.enabled = false
+      controller.radiusSlider.value = Float(tag.radius)
+      controller.onEntrySwitch.on = (tag.type == .Entry || tag.type == .Both)
+      controller.onExitSwitch.on = (tag.type == .Exit || tag.type == .Both)
+      let annotation = MKPointAnnotation()
+      annotation.coordinate = tag.coordinate
+      annotation.title = tag.title
+      controller.mapView.addAnnotation(annotation)
+    }
   }
   
   // MARK: UITableViewDataSource protocol functions
@@ -104,13 +122,45 @@ class TagSelectTableViewController: UITableViewController {
     }
   }
   
-  /*
+  
   // Override to support conditional editing of the table view.
   override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
   // Return NO if you do not want the specified item to be editable.
-  return true
+    if indexPath.row != 0 {
+      return true
+    }
+    return false
   }
-  */
+  
+  override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?  {
+    
+    let delete = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+      if let title = self.tagStore.getTagAtIndex(indexPath.row-1)!.title {
+        self.tagStore.removeTagWithTitle(title)
+      }
+      self.tagStore.saveAllTags()
+      self.tagStore.loadAllTags()
+      tableView.reloadData()
+    })
+    delete.backgroundColor = UIColor.redColor()
+    
+    let edit = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Edit" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+      self.tagToEdit = self.tagStore.getTagAtIndex(indexPath.row-1)
+      let storyboard = UIStoryboard(name: "Tags", bundle: nil)
+      let navigation = storyboard.instantiateViewControllerWithIdentifier("tagEdit") as! UINavigationController
+      if let vc = navigation.viewControllers[0] as? TagEditViewController {
+        vc.delegate = self
+        self.presentViewController(navigation, animated: true, completion: {
+          self.tagStore.saveAllTags()
+          self.tagStore.loadAllTags()
+        })
+      }
+      tableView.reloadData()
+    })
+    edit.backgroundColor = UIColor.magentaColor()
+    
+    return [delete, edit]
+  }
   
   /*
   // Override to support editing the table view.
