@@ -23,11 +23,16 @@ class FSTagStore: NSObject {
   }
   
   func addTag(tag: FSTag) {
+    while !finishedLoading {}
     if let title = tag.title {
       if let foundTag = getTagWithTitle(title) {
-        tagStore.removeAtIndex(tagStore.indexOf(foundTag)!)
+        if let index = tagStore.indexOf(foundTag) {
+          tagStore.removeAtIndex(index)
+          tagStore.insert(tag, atIndex: index)
+        }
+      } else {
+        tagStore.append(tag)
       }
-      tagStore.append(tag)
       saveAllTags()
     }
   }
@@ -108,6 +113,8 @@ class FSTagStore: NSObject {
   }
   
   func saveAllTags() {
+    while !finishedLoading {}
+    finishedLoading = false
     let tags = NSMutableArray()
     for currentTag in tagStore {
       let tag = NSKeyedArchiver.archivedDataWithRootObject(currentTag)
@@ -115,5 +122,6 @@ class FSTagStore: NSObject {
     }
     NSUserDefaults.standardUserDefaults().setObject(tags, forKey: FSTagStoreKey)
     NSUserDefaults.standardUserDefaults().synchronize()
+    finishedLoading = true
   }
 }

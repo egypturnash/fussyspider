@@ -14,7 +14,7 @@ class TagSelectTableViewController: UITableViewController, TagEditViewController
   let taskFilter = FSTaskFilter.sharedInstance
   let tagStore = FSTagStore.sharedInstance
   
-  var tagToEdit : FSTag?
+  var rowToEdit : Int?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -34,7 +34,7 @@ class TagSelectTableViewController: UITableViewController, TagEditViewController
   
   // MARK: TagEditViewControllerDelegate
   func tagEditViewController(controller: TagEditViewController, editTag _: String?) {
-    if let tag = tagToEdit {
+    if let tag = tagStore.getTagAtIndex(rowToEdit!) {
       controller.tagNameField.text = tag.title
       controller.tagNameField.enabled = false
       controller.radiusSlider.value = Float(tag.radius)
@@ -120,6 +120,7 @@ class TagSelectTableViewController: UITableViewController, TagEditViewController
         }
       }
     }
+    taskFilter.clear()
   }
   
   
@@ -145,16 +146,14 @@ class TagSelectTableViewController: UITableViewController, TagEditViewController
     delete.backgroundColor = UIColor.redColor()
     
     let edit = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Edit" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
-      self.tagToEdit = self.tagStore.getTagAtIndex(indexPath.row-1)
+      self.rowToEdit = indexPath.row-1
       let storyboard = UIStoryboard(name: "Tags", bundle: nil)
       let navigation = storyboard.instantiateViewControllerWithIdentifier("tagEdit") as! UINavigationController
       if let vc = navigation.viewControllers[0] as? TagEditViewController {
         vc.delegate = self
-        self.presentViewController(navigation, animated: true, completion: {
-          self.tagStore.saveAllTags()
-          self.tagStore.loadAllTags()
-        })
+        self.presentViewController(navigation, animated: true, completion: nil)
       }
+      self.tagStore.loadAllTags()
       tableView.reloadData()
     })
     edit.backgroundColor = UIColor.magentaColor()
