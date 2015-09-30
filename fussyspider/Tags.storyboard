@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Select Tags-->
@@ -156,11 +155,38 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.65000000000000002" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qWl-xD-vY5">
+                                <rect key="frame" x="20" y="181" width="38" height="46"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="DRl-oa-uRy"/>
+                                    <constraint firstAttribute="width" constant="38" id="ex3-mu-feD"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="◎">
+                                            <attributes>
+                                                <color key="NSColor" red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="34" name="STHeitiSC-Light"/>
+                                                <real key="NSKern" value="0.0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                                    <tabStops/>
+                                                </paragraphStyle>
+                                                <color key="NSStrokeColor" red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="zoomToUser:" destination="ccu-pQ-oAI" eventType="touchUpInside" id="Yxr-gw-6NJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.29172585229999998" green="0.0" blue="0.25832373990000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Hlf-JS-1Rr" firstAttribute="top" secondItem="AL6-Hl-sgE" secondAttribute="bottom" constant="15" id="07z-Ui-YxS"/>
                             <constraint firstItem="hTf-NL-PRc" firstAttribute="top" secondItem="Jgv-3V-m69" secondAttribute="bottom" constant="26" id="1kD-1Y-VEq"/>
+                            <constraint firstItem="qWl-xD-vY5" firstAttribute="top" secondItem="4zA-vn-1Ro" secondAttribute="bottom" constant="37" id="4KM-9t-gsx"/>
                             <constraint firstItem="Hlf-JS-1Rr" firstAttribute="trailing" secondItem="0Ee-ax-qfb" secondAttribute="trailingMargin" id="61d-of-I5d"/>
                             <constraint firstItem="Jgv-3V-m69" firstAttribute="leading" secondItem="0Ee-ax-qfb" secondAttribute="leadingMargin" id="69g-V6-YK3"/>
                             <constraint firstItem="mV9-ZU-e0W" firstAttribute="top" secondItem="jV6-X2-b1V" secondAttribute="bottom" constant="17" id="6fP-at-9VL"/>
@@ -175,6 +201,7 @@
                             <constraint firstItem="4zA-vn-1Ro" firstAttribute="top" secondItem="zO9-ms-D7F" secondAttribute="bottom" constant="21" id="IVB-sU-i8s"/>
                             <constraint firstItem="AL6-Hl-sgE" firstAttribute="top" secondItem="ua2-GO-nG2" secondAttribute="bottom" constant="14" id="KgR-JV-nfK"/>
                             <constraint firstItem="zO9-ms-D7F" firstAttribute="leading" secondItem="0Ee-ax-qfb" secondAttribute="leadingMargin" id="Mkl-Vv-rmT"/>
+                            <constraint firstItem="qWl-xD-vY5" firstAttribute="leading" secondItem="4zA-vn-1Ro" secondAttribute="leading" id="PmN-8Q-Dmw"/>
                             <constraint firstItem="AL6-Hl-sgE" firstAttribute="leading" secondItem="4zA-vn-1Ro" secondAttribute="trailing" constant="8" id="Pvg-5G-09X"/>
                             <constraint firstItem="Hlf-JS-1Rr" firstAttribute="top" secondItem="4zA-vn-1Ro" secondAttribute="bottom" constant="17" id="QWZ-Id-Btc"/>
                             <constraint firstItem="jV6-X2-b1V" firstAttribute="trailing" secondItem="0Ee-ax-qfb" secondAttribute="trailingMargin" id="RZD-Wn-Job"/>
@@ -207,20 +234,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Tag" id="5ZF-Er-afi">
-                        <leftBarButtonItems>
-                            <barButtonItem systemItem="cancel" id="dyk-QS-pzr">
-                                <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <segue destination="rUW-Fm-Mt6" kind="show" id="HWn-mA-S5f"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Zoom" id="Wt7-Yq-TBd">
-                                <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="zoomToUser:" destination="ccu-pQ-oAI" id="a8q-g5-SEX"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dyk-QS-pzr">
+                            <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="rUW-Fm-Mt6" kind="show" id="HWn-mA-S5f"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" tag="1" systemItem="save" id="jrO-Vm-5D4">
                             <color key="tintColor" red="0.50461647730000003" green="0.0" blue="0.47217712169999998" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                             <connections>
@@ -236,6 +255,7 @@
                         <outlet property="onExitSwitch" destination="jV6-X2-b1V" id="y14-eY-C3r"/>
                         <outlet property="radiusSlider" destination="mV9-ZU-e0W" id="xdu-BT-Nlh"/>
                         <outlet property="tagNameField" destination="ua2-GO-nG2" id="gJI-Xm-M9I"/>
+                        <outlet property="zoomButton" destination="qWl-xD-vY5" id="XxW-vB-EoA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y20-HF-I8G" userLabel="First Responder" sceneMemberID="firstResponder"/>

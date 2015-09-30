@@ -17,6 +17,7 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
   
   var matchingItems: [MKMapItem] = [MKMapItem]()
   var delegate: TagEditViewControllerDelegate?
+  var firstZoom: Bool = true
   
   let locationManager = CLLocationManager()
   let tagStore = FSTagStore()
@@ -27,6 +28,7 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
   @IBOutlet weak var onExitSwitch: UISwitch!
   @IBOutlet weak var radiusSlider: UISlider!
   @IBOutlet weak var mapView: MKMapView!
+  @IBOutlet weak var zoomButton: UIButton!
   
   @IBAction func locationFieldReturn(sender: AnyObject) {
     sender.resignFirstResponder()
@@ -68,6 +70,13 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
   
   func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
     mapView.showsUserLocation = (status == .AuthorizedAlways)
+  }
+  
+  func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+    if(firstZoom) {
+      zoomToUser(self)
+      firstZoom = false
+    }
   }
   
   // MARK: - Navigation
