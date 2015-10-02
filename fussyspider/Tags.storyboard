@@ -128,8 +128,11 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="10" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="mV9-ZU-e0W">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="30" maxValue="1000" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mV9-ZU-e0W">
                                 <rect key="frame" x="78" y="550" width="504" height="31"/>
+                                <connections>
+                                    <action selector="updateOverlayRadius:" destination="ccu-pQ-oAI" eventType="valueChanged" id="7N9-PI-FjP"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTf-NL-PRc">
                                 <rect key="frame" x="20" y="554" width="52" height="21"/>

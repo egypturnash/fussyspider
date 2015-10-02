@@ -37,13 +37,14 @@ class TagSelectTableViewController: UITableViewController, TagEditViewController
     if let tag = tagStore.getTagAtIndex(rowToEdit!) {
       controller.tagNameField.text = tag.title
       controller.tagNameField.enabled = false
-      controller.radiusSlider.value = Float(tag.radius)
+      controller.radiusSlider.setValue(Float(tag.radius), animated: false)
       controller.onEntrySwitch.on = (tag.type == .Entry || tag.type == .Both)
       controller.onExitSwitch.on = (tag.type == .Exit || tag.type == .Both)
       let annotation = MKPointAnnotation()
       annotation.coordinate = tag.coordinate
       annotation.title = tag.title
       controller.mapView.addAnnotation(annotation)
+      controller.mapView.selectAnnotation(annotation, animated: false)
     }
   }
   

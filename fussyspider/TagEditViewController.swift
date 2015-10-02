@@ -79,6 +79,29 @@ class TagEditViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
   }
   
+  func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+    mapView.addOverlay(MKCircle(centerCoordinate: view.annotation!.coordinate, radius: CLLocationDistance(radiusSlider.value)))
+  }
+  
+  func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
+    mapView.removeOverlays(mapView.overlays)
+  }
+  
+  func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+    let circleRenderer = MKCircleRenderer(overlay: overlay)
+    circleRenderer.lineWidth = 1.0
+    circleRenderer.strokeColor = UIColor.purpleColor()
+    circleRenderer.fillColor = UIColor.purpleColor().colorWithAlphaComponent(0.4)
+    return circleRenderer
+  }
+  
+  @IBAction func updateOverlayRadius(sender: AnyObject) {
+    mapView.removeOverlays(mapView.overlays)
+    if let annotation = mapView.selectedAnnotations.first {
+      mapView.addOverlay(MKCircle(centerCoordinate: annotation.coordinate, radius: CLLocationDistance(radiusSlider.value)))
+    }    
+  }
+  
   // MARK: - Navigation
   
   // In a storyboard-based application, you will often want to do a little preparation before navigation
