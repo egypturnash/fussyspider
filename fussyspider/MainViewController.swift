@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EventKit
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
@@ -55,5 +56,37 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     cell.textLabel!.text = tasks[row].task.title
     cell.textLabel!.textColor! = .lightTextColor()
     return cell
+  }
+  
+  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    // Return NO if you do not want the specified item to be editable.
+    return true
+  }
+  
+  func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?  {
+    
+    let delete = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+      self.deleteRow(indexPath)
+    })
+    delete.backgroundColor = UIColor.redColor()
+    
+    let complete = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Complete" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+      self.completedRow(indexPath)
+    })
+    complete.backgroundColor = UIColor.magentaColor()
+    
+    return [delete, complete]
+  }
+  
+  func deleteRow(indexPath:NSIndexPath) {
+    taskStore.deleteTask(tasks[indexPath.row])
+    tasks = taskFilter.filterTasks(taskStore.getAllTasks())
+    taskTable.reloadData()
+  }
+  
+  func completedRow(indexPath:NSIndexPath) {
+    taskStore.completeTask(tasks[indexPath.row])
+    tasks = taskFilter.filterTasks(taskStore.getAllTasks())
+    taskTable.reloadData()
   }
 }

@@ -52,12 +52,28 @@ class FSTaskStore: NSObject {
   
   func addTask(task: FSTask) {
     taskStore.append(task)
-    saveReminder(task.task)
+    do {
+      try eventStore.saveReminder(task.task, commit: true)
+    }
+    catch let error as NSError {
+      print(error)
+    }
   }
   
-  func saveReminder(reminder: EKReminder) {
+  func deleteTask(task: FSTask) {
+    taskStore.removeAtIndex(taskStore.indexOf(task)!)
     do {
-      try eventStore.saveReminder(reminder, commit: true)
+      try eventStore.removeReminder(task.task, commit: true)
+    }
+    catch let error as NSError {
+      print(error)
+    }
+  }
+  
+  func completeTask(task: FSTask) {
+    task.task.completed = true
+    do {
+      try eventStore.saveReminder(task.task, commit: true)
     }
     catch let error as NSError {
       print(error)
