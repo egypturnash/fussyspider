@@ -11,6 +11,7 @@ import UIKit
 class FSTaskFilter: NSObject {
   var showCompleted : Bool = false
   var showUntagged : Bool = true
+  var sortPriority : Bool = false
   var showAll : Bool = true
   var tags : [FSTag] = []
   var filteredTasks : [FSTask] = []
@@ -20,6 +21,7 @@ class FSTaskFilter: NSObject {
   func filterTasks(tasks : [FSTask]) -> [FSTask] {
     filteredTasks = []
     
+    // Filtering
     if showAll && !showCompleted && !showUntagged {
       filteredTasks = tasks
     } else {
@@ -42,6 +44,12 @@ class FSTaskFilter: NSObject {
         }
       }
     }
+    
+    // Sorting
+    if sortPriority {
+      filteredTasks.sortInPlace({ $0.task.priority < $1.task.priority })
+    }
+    
     return filteredTasks
   }
   

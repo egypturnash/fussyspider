@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="L3U-0w-qX2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="L3U-0w-qX2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,12 +19,17 @@
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66G-Rx-xNd">
                                 <rect key="frame" x="488" y="146" width="51" height="31"/>
+                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="Priority Toggle"/>
                                 <color key="onTintColor" red="1" green="0.00083137051919999995" blue="0.80710363829999998" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="sortPriorityValueChange:" destination="W8f-o7-g8y" eventType="valueChanged" id="lQl-XG-zwQ"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Finished Tasks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="op6-W7-Avk">
                                 <rect key="frame" x="64" y="99" width="172" height="21"/>
+                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="Show Finished Tasks"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="172" id="AN2-SN-aJg"/>
@@ -36,6 +41,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort By Priority" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zl4-pT-5Al">
                                 <rect key="frame" x="64" y="151" width="166" height="21"/>
+                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="Starred Tasks on Top"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="166" id="iOP-sM-zWu"/>
@@ -47,6 +53,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kalinda Frequency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACK-Mj-uqw">
                                 <rect key="frame" x="64" y="202" width="166" height="21"/>
+                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="Kalinda Frequency"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -54,6 +61,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Never" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGQ-5E-BxN">
                                 <rect key="frame" x="64" y="254" width="54" height="21"/>
+                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="Never"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="eC3-Iw-Wqq"/>
@@ -65,6 +73,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lots" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="349-5U-kc1">
                                 <rect key="frame" x="511" y="254" width="26" height="21"/>
+                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="Lots"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="26" id="9zg-eX-BUP"/>
@@ -75,10 +84,12 @@
                             </label>
                             <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AfF-Xf-B3I">
                                 <rect key="frame" x="64" y="294" width="473" height="88"/>
+                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="Theme selector"/>
                             </pickerView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lyJ-Wh-fuG">
                                 <rect key="frame" x="488" y="94" width="51" height="31"/>
+                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="Finished Tasks Toggle"/>
                                 <color key="onTintColor" red="1" green="0.00083137051919999995" blue="0.80710363829999998" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -88,11 +99,13 @@
                             </switch>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kKw-hM-3Hi">
                                 <rect key="frame" x="62" y="231" width="477" height="31"/>
+                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="Frequency slider"/>
                                 <color key="minimumTrackTintColor" red="1" green="0.00083137051919999995" blue="0.80710363829999998" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </slider>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.29172585229999998" green="0.0" blue="0.25832373990000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="op6-W7-Avk" firstAttribute="leading" secondItem="zl4-pT-5Al" secondAttribute="leading" id="1i4-jv-2L9"/>
@@ -130,6 +143,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="showCompletedSwitch" destination="lyJ-Wh-fuG" id="7MN-J5-OjY"/>
+                        <outlet property="sortPrioritySwitch" destination="66G-Rx-xNd" id="bHJ-Mf-mmR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jxp-0k-cnf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -152,6 +166,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h6v-A8-CpX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

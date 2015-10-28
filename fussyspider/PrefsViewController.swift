@@ -13,20 +13,25 @@ class PrefsViewController: UIViewController {
   let taskFilter = FSTaskFilter.sharedInstance
 
   @IBOutlet weak var showCompletedSwitch: UISwitch!
+  @IBOutlet weak var sortPrioritySwitch: UISwitch!
   
   @IBAction func showCompletedValueChange(sender: AnyObject) {
     taskFilter.showCompleted = showCompletedSwitch.on
   }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        showCompletedSwitch.setOn(taskFilter.showCompleted, animated: false)
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  @IBAction func sortPriorityValueChange(sender: AnyObject) {
+    taskFilter.sortPriority = sortPrioritySwitch.on
+  }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    showCompletedSwitch.setOn(taskFilter.showCompleted, animated: false)
+    sortPrioritySwitch.setOn(taskFilter.sortPriority, animated: false)
+    // Do any additional setup after loading the view.
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
   
     /*
     // MARK: - Navigation
