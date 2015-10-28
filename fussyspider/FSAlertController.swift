@@ -27,11 +27,6 @@ class FSAlertController: UIAlertController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func simpleAlert() {
-        
-    }
-    
 
     /*
     // MARK: - Navigation
@@ -42,5 +37,4 @@ class FSAlertController: UIAlertController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
