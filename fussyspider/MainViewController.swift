@@ -1,6 +1,6 @@
 //
 //  MainViewController.swift
-//  fussymouse
+//  fussyspider
 //
 //  Created by Evan Ostroski on 7/19/15.
 //  Copyright (c) 2015 Evan Ostroski. All rights reserved.
@@ -52,9 +52,17 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("taskRow", forIndexPath: indexPath)
-    let row = indexPath.row
-    cell.textLabel!.text = tasks[row].task.title
-    cell.textLabel!.textColor! = .lightTextColor()
+    let task = tasks[indexPath.row].task
+    
+    if let label = cell.textLabel {
+      label.text = task.title
+      label.textColor = .lightTextColor()
+    }
+    
+    if task.completed {
+      cell.accessoryType = .Checkmark
+    }
+    
     return cell
   }
   
